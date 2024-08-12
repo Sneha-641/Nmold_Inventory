@@ -9,9 +9,9 @@ import AllCustomer from './Pages/AllCustomer';
 import AllSupplier from './Pages/Suppliers';
 import AddSupplier from './Components/AddForms/AddSupplier';
 import StockAll from './Pages/StockAll';
-import Categories from './Pages/Categories';
+import AllCategories from './Pages/AllCategories';
 import Units from './Pages/Units';
-import CustomersReport from './Pages/CustomersReport';
+import CustomerWiseReport from './Pages/CustomerWiseReport';
 import CreditCustomer from './Pages/CreditCustomer';
 import PrintInvoice from './Pages/PrintInvoice';
 import AllProducts from './Pages/AllProducts';
@@ -23,8 +23,11 @@ import { Router, Route, Routes } from 'react-router-dom';
 import AddProduct from './Components/AddForms/AddProduct';
 import AddCustomer from './Components/AddForms/AddCustomer';
 import PrintInvoiceComponent from './Components/Others/PrintInvoiceComponent';
+import CustomerReport from './Pages/CustomerReport';
+import AddUnit from './Components/PopupBox/AddUnit';
 
 function App() {
+  {/* ------------- Figma ---------  */}
   // https://www.figma.com/design/sxn5pvw5PM59CHNTwBFjYn/Inventory-Management-Web-%2B-Android?node-id=0-1&t=keUplJRB88dke1HD-0
   return (
     <>
@@ -44,8 +47,16 @@ function App() {
       {/* <AllCustomer/> */}
       {/* <AddCustomer/> */}
       {/* <CreditCustomer/> */}
-      {/* <CustomersReport/> */}
-      <PrintInvoice/>
+      {/* <CustomerWiseReport/> */}
+      {/* <CustomerReport/> */}
+      
+      {/* ------------- Manage Units ---------  */}
+      {/* <Units/> */}
+
+      {/* ------------- Manage Categories ---------  */}
+      <AllCategories/>
+
+      {/* ------------- Manage Products ---------  */}
 
       </>
   );

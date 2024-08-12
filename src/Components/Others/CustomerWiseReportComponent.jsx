@@ -1,10 +1,12 @@
 import React from 'react'
-
-import { CategoriesData } from '../../Data/index'
+import { customerReportData } from '../../Data/index'
 import "../../Styles/Home.css"
 import "../../Styles/PurchaseAll.css"
-const CategoriesComponent = () => {
-    const [state, setstate] = React.useState(CategoriesData);
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
+const CustomerWiseReportComponent = () => {
+    const [state, setstate] = React.useState(customerReportData);
     const [dir, setdir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
     const [interval, setinterval] = React.useState(10)
@@ -44,40 +46,50 @@ const CategoriesComponent = () => {
         })
         setstate(searchdata)
     }
+    console.log(start);
     React.useEffect(() => { }, []);
     return (
         <>
             <div className='home-table2 rounded-xl'>
                 
                 <div className=''>
+                    <div className="flex justify-between items-center mb-4">
+                        <div className="flex items-center space-x-2">
+                            <FontAwesomeIcon icon={faArrowLeft} />
+                            <h2 className="text-xl font-semibold">Back</h2>
+                        </div>
+                      <button className="px-4 py-2 bg-[#5884FF] text-white rounded-md">Add Customer</button>
+                    </div>
                     <table className='w-full dash-table1 bg-white'>
                         <tr className='border border-solid cursor-pointer border-black h-[2rem]' style={{ backgroundColor: "white" }}>
                             <th
                                 onClick={() => sortdata('name1')}
-                            >
-                                Serial No.
+                            >Sr. No.
                             </th>
                             <th
                                 onClick={() => sortdata('name2')}
-                            >
-                                Category
+                            >Customer Name
                             </th>
                             <th
                                 onClick={() => sortdata('name3')}
-                            >
-                                Edit
+                            >Contact
                             </th>
                             <th
                                 onClick={() => sortdata('name4')}
-                            >
-                                Delete
+                            >Email
+                            </th>
+                            <th
+                                onClick={() => sortdata('name5')}
+                            >Address
+                            </th>
+                            <th>
+                                Report
                             </th>
                         </tr>
                         {state.slice(start, start + interval).map((item, index) => (
                             <tr className='h-[2rem]'>
                                 <td>
                                     <div className=''>
-
                                         {item.name1}
 
                                     </div>
@@ -89,27 +101,40 @@ const CategoriesComponent = () => {
                                 </td>
                                 <td>
                                     <div className=''>
-                                        <div className='py-[2px] cursor-pointer flex gap-3 px-4 justify-center items-center'>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 15" fill="none">
-                                                <path d="M0.928711 11.8225V14.2291C0.928711 14.4508 1.11204 14.625 1.34538 14.625H3.87871C3.98704 14.625 4.09538 14.5854 4.17038 14.5062L13.2704 5.86915L10.1454 2.9004L1.05371 11.5375C0.970378 11.6166 0.928711 11.7116 0.928711 11.8225ZM15.687 3.57332C15.7643 3.50008 15.8256 3.41308 15.8674 3.31731C15.9092 3.22154 15.9307 3.11887 15.9307 3.01519C15.9307 2.91151 15.9092 2.80884 15.8674 2.71307C15.8256 2.6173 15.7643 2.53031 15.687 2.45707L13.737 0.604565C13.66 0.531175 13.5684 0.47295 13.4676 0.433223C13.3668 0.393496 13.2587 0.373047 13.1495 0.373047C13.0404 0.373047 12.9323 0.393496 12.8315 0.433223C12.7307 0.47295 12.6391 0.531175 12.562 0.604565L11.037 2.05331L14.162 5.02207L15.687 3.57332Z" fill="black" />
-                                            </svg>
-                                            <div className=''>
-                                                Edit
-                                            </div>
-                                        </div>
+                                        {item.name6}
                                     </div>
                                 </td>
                                 <td>
                                     <div className=''>
-                                        <div className='py-[2px] cursor-pointer flex gap-3 px-4 justify-center items-center'>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 13 15" fill="none">
-                                                <path d="M9.34521 1.16667L8.51188 0.375H4.34522L3.51188 1.16667H0.595215V2.75H12.2619V1.16667H9.34521ZM1.42855 13.0417C1.42855 13.9125 2.17855 14.625 3.09521 14.625H9.76188C10.6785 14.625 11.4285 13.9125 11.4285 13.0417V3.54167H1.42855V13.0417ZM3.09521 5.125H9.76188V13.0417H3.09521V5.125Z" fill="black" />
+                                        {item.name4}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className=''>
+                                        {item.name5}
+                                    </div>
+                                </td>
+                                <td>
+                                <div className=''>
+
+                                    <div className='flex items-center justify-center gap-2 cursor-pointer'>
+                                        <div className=''>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
+                                                <g clip-path="url(#clip0_193_3526)">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4004 22C10.0064 22 5.46039 19.244 2.59239 15C5.46039 10.756 10.0064 8 15.4004 8C20.7944 8 25.3404 10.756 28.2084 15C25.3404 19.244 20.7944 22 15.4004 22ZM15.4004 6C9.01639 6 3.71239 9.412 0.552393 14.47C0.45306 14.6289 0.400391 14.8126 0.400391 15C0.400391 15.1874 0.45306 15.3711 0.552393 15.53C3.71239 20.588 9.01639 24 15.4004 24C21.7844 24 27.0884 20.588 30.2484 15.53C30.3477 15.3711 30.4004 15.1874 30.4004 15C30.4004 14.8126 30.3477 14.6289 30.2484 14.47C27.0884 9.412 21.7844 6 15.4004 6ZM15.4004 19C16.4613 19 17.4787 18.5786 18.2288 17.8284C18.979 17.0783 19.4004 16.0609 19.4004 15C19.4004 13.9391 18.979 12.9217 18.2288 12.1716C17.4787 11.4214 16.4613 11 15.4004 11C14.3395 11 13.3221 11.4214 12.572 12.1716C11.8218 12.9217 11.4004 13.9391 11.4004 15C11.4004 16.0609 11.8218 17.0783 12.572 17.8284C13.3221 18.5786 14.3395 19 15.4004 19Z" fill="black" />
+                                                </g>
+                                                <defs>
+                                                    <clipPath id="clip0_193_3526">
+                                                        <rect width="30" height="30" fill="white" transform="translate(0.400391)" />
+                                                    </clipPath>
+                                                </defs>
                                             </svg>
-                                            <div className=''>
-                                                Delete
-                                            </div>
+                                        </div>
+                                        <div className=''>
+                                            View
                                         </div>
                                     </div>
+                                </div>
                                 </td>
                             </tr>
                         ))}
@@ -162,4 +187,4 @@ const CategoriesComponent = () => {
     )
 }
 
-export default CategoriesComponent
+export default CustomerWiseReportComponent

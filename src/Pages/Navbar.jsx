@@ -70,7 +70,7 @@ const Navbar = () => {
 
 
   return (
-    <div className="w-[16%] min-h-[100vh] bg-[#5884FF] text-white flex flex-col p-4 space-y-2 absolute left-0  top-0">
+    <div className="w-[16%] min-h-screen bg-[#5884FF] text-white flex flex-col p-4 space-y-2 absolute left-0  top-0">
       {/* Logo */}
       <div className="flex items-center space-x-2 mb-6 justify-center">
         <img src={D} alt="Logo" className="h-10 w-10" />

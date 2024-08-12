@@ -191,3 +191,10 @@
     width: 1.8rem;
     display: block;
 }
+
+.custom_table td , th{
+    /* border: 2px solid #cbd5e0; */
+    @apply border border-gray-400;
+    @apply p-1;
+
+}

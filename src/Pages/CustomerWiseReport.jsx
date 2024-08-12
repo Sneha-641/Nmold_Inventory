@@ -1,5 +1,5 @@
 import React from 'react'
-import CustomersReportComponent from '../Components/Others/CustomersReportComponent'
+import CustomersReportComponent from '../Components/Others/CustomerWiseReportComponent'
 
 const CustomersReport = () => {
   return (
