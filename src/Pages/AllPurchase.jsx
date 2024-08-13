@@ -1,14 +1,13 @@
 import React from 'react'
-import AllInvoiceComponent from '../Components/Others/AllInvoiceComponent'
-
-const AllInvoice = () => {
+import AllPurchaseComponent from '../Components/PurchaseAll/AllPurchase'
+const AllPurchase = () => {
   return (
     <div className='ml-[16%]  w-[84%] h-[100vh] px-[2rem] mt-[2rem]'>
       <div className=''>
-        <AllInvoiceComponent />
+        <AllPurchaseComponent />
       </div>
     </div>
   )
 }
 
-export default AllInvoice
+export default AllPurchase 

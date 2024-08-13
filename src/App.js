@@ -4,11 +4,11 @@ import Login from './Pages/Login';
 import Dashboard from './Pages/Dashboard';
 import Navbar from './Pages/Navbar';
 import TopNavbar from './Pages/TopNavbar';
-import PurchaseAll from './Pages/PurchaseAll';
+import AllPurchase from './Pages/AllPurchase';
 import AllCustomer from './Pages/AllCustomer';
 import AllSupplier from './Pages/Suppliers';
 import AddSupplier from './Components/AddForms/AddSupplier';
-import StockAll from './Pages/StockAll';
+import AllStock from './Pages/AllStock';
 import AllCategories from './Pages/AllCategories';
 import Units from './Pages/Units';
 import CustomerWiseReport from './Pages/CustomerWiseReport';
@@ -25,6 +25,11 @@ import AddCustomer from './Components/AddForms/AddCustomer';
 import PrintInvoiceComponent from './Components/Others/PrintInvoiceComponent';
 import CustomerReport from './Pages/CustomerReport';
 import AddUnit from './Components/PopupBox/AddUnit';
+import AddPurchase from './Components/AddForms/AddPurchase';
+import AddInvoice from './Components/AddForms/AddInvoice';
+import InvoiceReport from './Pages/InvoiceReport';
+import DailyInvoiceReport from './Pages/DailyInvoiceReport';
+import PurchaseReport from './Pages/PurchaseReport';
 
 function App() {
   {/* ------------- Figma ---------  */}
@@ -54,9 +59,27 @@ function App() {
       {/* <Units/> */}
 
       {/* ------------- Manage Categories ---------  */}
-      <AllCategories/>
+      {/* <AllCategories/> */}
 
       {/* ------------- Manage Products ---------  */}
+      {/* <AllProducts/> */}
+      {/* <AddProduct/> */}
+
+      {/* ------------- Manage Purchase ---------  */}
+      {/* <AllPurchase/> */}
+      {/* <AddPurchase/> */}
+      <PurchaseReport/>
+
+      {/* ------------- Manage Invoice ---------  */}
+      {/* <AllInvoice/> */}
+      {/* <AddInvoice/> */}
+      {/* <PrintInvoice/> */}
+      {/* <InvoiceReport/> */}
+      {/* <DailyInvoiceReport/> */}
+
+      {/* ------------- Manage Stock ---------  */}
+      {/* <AllStock/> */}
+      
 
       </>
   );

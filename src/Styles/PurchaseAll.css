@@ -8,12 +8,7 @@
 .dash-table2 > tr > td > div{
     background-color: #B2BCE2;
 }
-.approved-btn{
-    background-color: #53DFB5 !important;
-}
-.rejected-btn{
-    background-color: #ff9595 !important;
-}
+a
 .dash-table2-type2 > tr > td{
     padding:7px 2px;
     text-align: center;

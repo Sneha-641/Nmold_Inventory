@@ -2,6 +2,8 @@ import React from 'react'
 import { allinvoicedata } from '../../Data/index'
 import "../../Styles/Home.css"
 import "../../Styles/PurchaseAll.css"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 const AllInvoiceComponent = () => {
     const [state, setstate] = React.useState(allinvoicedata);
@@ -47,9 +49,15 @@ const AllInvoiceComponent = () => {
     React.useEffect(() => { }, []);
     return (
         <>
-            <div className='home-table2 rounded-xl'>
-                
+            <div className='home-table2 rounded-xl'>                
                 <div className=''>
+                    <div className="flex justify-between items-center mb-4">
+                        <div className="flex items-center space-x-2">
+                            <FontAwesomeIcon icon={faArrowLeft} />
+                            <h2 className="text-xl font-semibold">Back</h2>
+                        </div>
+                      <button className="px-4 py-2 bg-[#5884FF] text-white rounded-md shadow-sm shadow-[#5884FF]">Add Invoice</button>
+                      </div>
                     <table className='w-full dash-table1 bg-white'>
                         <tr className='border border-solid cursor-pointer border-black h-[2rem]' style={{ backgroundColor: "white" }}>
                             <th
@@ -131,16 +139,15 @@ const AllInvoiceComponent = () => {
                                     </div>
                                 </td>
 
-                                <td style={{ display: "flex", justifyContent: "center" }}>
-                                    {item.name8 === "Paid" && <div className='bg-green-400 w-[fit-content] approved-btn px-3 rounded-full'>
+                                <td className='text-white'>
+                                    {item.name8 === "Paid" && <div className='mx-auto bg-green-600 w-[fit-content] px-3 rounded-full'>
                                         {item.name8}
                                     </div>}
-                                    {item.name8 === "Partially Paid" && <div className='bg-orange-300 w-[fit-content] px-3 rounded-full'
-                                        style={{ backgroundColor: "#FFA500" }}
+                                    {item.name8 === "Partially Paid" && <div className='mx-auto bg-orange-400 w-[fit-content] px-3 rounded-full'
                                     >
                                         {item.name8}
                                     </div>}
-                                    {item.name8 === "Overdue" && <div className='bg-red-300 w-[fit-content] rejected-btn px-3 rounded-full'>
+                                    {item.name8 === "Overdue" && <div className='mx-auto bg-red-600 w-[fit-content] px-3 rounded-full'>
                                         {item.name8}
                                     </div>}
                                 </td>

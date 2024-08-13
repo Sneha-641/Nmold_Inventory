@@ -1,14 +1,16 @@
 import React from 'react'
 import AddProduct from '../Components/AddForms/AddProduct'
 import AddInvoice from '../Components/AddForms/AddInvoice'
+import AddPurchase from '../Components/AddForms/AddPurchase'
 
 const AddForms = () => {
   return (
     <>
-        <div className='  w-[100%]  h-[100vh] px-[2rem] mt-[2rem] flex justify-center '>
+        <div className=' ml-[16%] aw-[100%]  max-h-screen px-[2rem] mt-[2rem] flex justify-center '>
             <div className=''>
-                <AddProduct />
+                {/* <AddProduct /> */}
                 {/* <AddInvoice/> */}
+                <AddPurchase/>
             </div>
         </div>
     </>

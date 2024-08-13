@@ -4,7 +4,6 @@ import "../../Styles/Home.css"
 import "../../Styles/PurchaseAll.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import AddCategory from '../PopupBox/AddCategory';
 
 const AllCategoriesComponent = () => {
     const [state, setstate] = React.useState(CategoriesData);

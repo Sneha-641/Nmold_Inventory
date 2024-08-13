@@ -1,14 +1,18 @@
 import React from 'react'
-
-import { stockData } from '../../Data/index'
+import { purchasealldata } from '../../Data/index'
 import "../../Styles/Home.css"
 import "../../Styles/PurchaseAll.css"
-const StockAllComponent = () => {
-    const [state, setstate] = React.useState(stockData);
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
+const PurchaseReportComponent = () => {
+    const [state, setstate] = React.useState(purchasealldata);
     const [dir, setdir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
     const [interval, setinterval] = React.useState(10)
-    const sortdata = (key) => {
+    const [num,setnumber]=React.useState(-1)
+    const sortdata = (key) => { 
+
         if (dir === 'asc') {
             setdir('desc')
             const sorteddata = [...state].sort((a, b) => {
@@ -44,64 +48,72 @@ const StockAllComponent = () => {
         })
         setstate(searchdata)
     }
+    console.log(start);
     React.useEffect(() => { }, []);
     return (
         <>
+            {/* <PopUpMain id={num}/> */}
             <div className='home-table2 rounded-xl'>
                 <div className=''>
+                     <div className="flex justify-between items-center mb-4">
+                        <div className="flex items-center space-x-2">
+                            <FontAwesomeIcon icon={faArrowLeft} />
+                            <h2 className="text-xl font-semibold">Back</h2>
+                        </div>
+                      <button className="px-4 py-2 bg-[#5884FF] text-white rounded-md shadow-sm shadow-[#5884FF]">Download PDF</button>
+                      </div>
                     <table className='w-full dash-table1 bg-white'>
-                        <tr className='border border-solid cursor-pointer border-black h-[2rem]' style={{ backgroundColor: "white" }}>
+                        <tr className='border border-solid table-header-row cursor-pointer ' style={{ backgroundColor: "white" }}>
                             <th
                                 onClick={() => sortdata('name1')}
                             >
-                                S.No.
-                            </th>
-                            <th
-                                onClick={() => sortdata('name1')}
-                            >
-                                Stock No.
+                                S.No
                             </th>
                             <th
                                 onClick={() => sortdata('name2')}
                             >
-                                Date
+                                Purchase No.
                             </th>
                             <th
                                 onClick={() => sortdata('name3')}
                             >
-                                Supplier
+                                Date
                             </th>
                             <th
-                                onClick={() => sortdata('name4')}
-                            >
-                                Category
+                                onClick={() => sortdata('name9')}
+                            >Price/Qty
                             </th>
                             <th
                                 onClick={() => sortdata('name5')}
                             >
+                                Category
+                            </th>
+                            <th onClick={() => sortdata('name6')}>
                                 Qty
                             </th>
-                            <th onClick={() => sortdata('name6')}>
+                            <th
+                                onClick={() => sortdata('name7')}
+                            >
                                 Product Name
                             </th>
-                            <th onClick={() => sortdata('name6')}>
-                                Status
+
+                            <th
+                                onClick={() => sortdata('name8')}
+                            >
+                                Total Price
                             </th>
                         </tr>
                         {state.slice(start, start + interval).map((item, index) => (
                             <tr className='h-[2rem]'>
                                 <td>
                                     <div className=''>
-
-                                        {item.name1[2]}
+                                        {index + 1}
 
                                     </div>
                                 </td>
                                 <td>
                                     <div className=''>
-
                                         {item.name2}
-
                                     </div>
                                 </td>
                                 <td>
@@ -111,7 +123,7 @@ const StockAllComponent = () => {
                                 </td>
                                 <td>
                                     <div className=''>
-                                        {item.name4}
+                                        {item.name9}
                                     </div>
                                 </td>
                                 <td>
@@ -124,29 +136,24 @@ const StockAllComponent = () => {
                                         {item.name6}
                                     </div>
                                 </td>
+
                                 <td>
                                     <div className=''>
                                         {item.name7}
                                     </div>
                                 </td>
-
-                                <td className=''>
-                                    <div className='flex justify-center items-center' style={{ backgroundColor: "" }}>
-                                        {item.name8 === "Full" && <div className='bg-green-400 w-[fit-content] px-3 rounded-full flex items-center'
-                                            style={{ backgroundColor: "rgb(74,222,128)" }}>
-                                            {item.name8}
-                                        </div>}
-                                        {item.name8 === "Incomplete" && <div className='bg-red-300 w-[fit-content] px-3 rounded-full'
-                                            style={{ backgroundColor: "rgb(252,165,165)" }}>
-                                            {item.name8}
-                                        </div>}
-                                    </div>
+                                <td>
+                                    <div>{item.name10}</div>
                                 </td>
                             </tr>
                         ))}
+                        <tr className='font-semibold'>
+                            <td  colSpan="7" className='text-right pr-12 uppercase '>Grand Total</td>
+                            <td className=''>Rs. 36000</td>
+                        </tr>
                     </table>
                 </div>
-                <div className=' bottom-pagination w-full right-0 flex justify-center items-center gap-2 mt-2'>
+                <div className='w-full bottom-pagination right-0 flex justify-center items-center gap-2 mt-2 bottom-pagination'>
                     <div className='flex gap-2'>
                         <div className=' home-gt-btn cursor-pointer'
                             onClick={() => {
@@ -193,4 +200,4 @@ const StockAllComponent = () => {
     )
 }
 
-export default StockAllComponent
+export default PurchaseReportComponent

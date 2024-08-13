@@ -9,7 +9,7 @@ const SupplierComponent = () => {
     const [state, setstate] = React.useState(supplierdata);
     const [dir, setdir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
-    const [interval, setinterval] = React.useState(10)
+    const [interval, setinterval] = React.useState(15)
     const sortdata = (key) => {
         if (dir === 'asc') {
             setdir('desc')
