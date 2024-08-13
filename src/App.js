@@ -19,7 +19,7 @@ import AllInvoice from './Pages/AllInvoice';
 import AddForms from './Pages/AddForms';
 import AddCategory from './Components/PopupBox/AddCategory';
 import PopUpMain from './Components/PopupBox/PopUpMain';
-import { Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AddProduct from './Components/AddForms/AddProduct';
 import AddCustomer from './Components/AddForms/AddCustomer';
 import PrintInvoiceComponent from './Components/Others/PrintInvoiceComponent';
@@ -36,8 +36,24 @@ function App() {
   // https://www.figma.com/design/sxn5pvw5PM59CHNTwBFjYn/Inventory-Management-Web-%2B-Android?node-id=0-1&t=keUplJRB88dke1HD-0
   return (
     <>
-      <TopNavbar/>
-      <Navbar/>
+      <Router>
+        <TopNavbar/>
+        <Navbar/>
+        <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="all-supplier" element={<AllSupplier />} />
+            <Route path="add-supplier" element={<AddSupplier />} />
+            <Route path="all-customer" element={<AllCustomer />} />
+            <Route path="add-customer" element={<AddCustomer />} />
+            <Route path="credit-customer" element={<CreditCustomer />} />
+            <Route path="customer-wise-report" element={<CustomerWiseReport />} />
+            <Route path="all-unit" element={<Units/>} />
+            <Route path="all-categorie" element={<AllCategories/>} />
+            <Route path="add-categorie" element={<AddCategory/>} />
+            
+            
+        </Routes>
+      </Router>
 
       {/* ------------- Dashboard ---------  */}
       {/* <Dashboard/> */}
@@ -68,7 +84,7 @@ function App() {
       {/* ------------- Manage Purchase ---------  */}
       {/* <AllPurchase/> */}
       {/* <AddPurchase/> */}
-      <PurchaseReport/>
+      {/* <PurchaseReport/> */}
 
       {/* ------------- Manage Invoice ---------  */}
       {/* <AllInvoice/> */}

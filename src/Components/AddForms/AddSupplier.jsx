@@ -41,7 +41,7 @@ const AddSupplier = () => {
                                 </div>
                             </form>
                             <div className='flex justify-center items-center mt-8 mb-6'>
-                                <div className="btn" onClick={() => { }}>Add</div>
+                                <div className="btn w-[200px] h-[40px] shadow-sm shadow-[#5884FF] items-center" onClick={() => { }}>Add</div>
                             </div>
                         </div>
                     </div>

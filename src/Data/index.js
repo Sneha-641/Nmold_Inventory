@@ -75,7 +75,7 @@ export const homedatatable = [
         name6: "Watch",
         name7: 15,
         name8:"Supplier A",
-        name9:"In-Stock",
+        name9:"Out-of-Stock",
     },{
         name1: 1,
         name2: "#9847",
@@ -155,7 +155,7 @@ export const homedatatable = [
         name6: "Watch",
         name7: 15,
         name8:"Supplier A",
-        name9:"Out of Stock",
+        name9:"Out-of-Stock",
     },{
         name1: 1,
         name2: "#9847",
@@ -214,7 +214,7 @@ export const purchasealldata = [
     {
         name1: "2",
         name2: "B123",
-        name3: "26 May,2024",
+        name3: "10 May,2024",
         name4: "PQR",
         name5: "Stationary",
         name6: "20",
@@ -238,30 +238,7 @@ export const purchasealldata = [
     {
         name1: "2",
         name2: "B123",
-        name3: "26 May,2024",
-        name4: "PQR",
-        name5: "Stationary",
-        name6: "20",
-        name7: "Pen",
-        name8: "Pending",
-        name9: "200",
-        name10: "4000",
-    },{
-        name1: "1",
-        name2: "A123",
-        name3: "26 Feb,2024",
-        name4: "XYZ",
-        name5: "Electronics",
-        name6: "100",
-        name7: "Phone",
-        name8: "Approved",
-        name9: "10",
-        name10: "1000",
-    },
-    {
-        name1: "2",
-        name2: "B123",
-        name3: "26 May,2024",
+        name3: "10 May,2024",
         name4: "PQR",
         name5: "Stationary",
         name6: "20",
@@ -284,7 +261,7 @@ export const purchasealldata = [
     {
         name1: "2",
         name2: "B123",
-        name3: "26 May,2024",
+        name3: "10 May,2024",
         name4: "PQR",
         name5: "Stationary",
         name6: "20",
@@ -307,7 +284,7 @@ export const purchasealldata = [
     {
         name1: "2",
         name2: "B123",
-        name3: "26 May,2024",
+        name3: "10 May,2024",
         name4: "PQR",
         name5: "Stationary",
         name6: "20",
@@ -330,7 +307,7 @@ export const purchasealldata = [
     {
         name1: "2",
         name2: "B123",
-        name3: "26 May,2024",
+        name3: "10 May,2024",
         name4: "PQR",
         name5: "Stationary",
         name6: "20",
@@ -353,7 +330,7 @@ export const purchasealldata = [
     {
         name1: "2",
         name2: "B123",
-        name3: "26 May,2024",
+        name3: "10 May,2024",
         name4: "PQR",
         name5: "Stationary",
         name6: "20",
@@ -376,7 +353,7 @@ export const purchasealldata = [
     {
         name1: "2",
         name2: "B123",
-        name3: "26 May,2024",
+        name3: "10 May,2024",
         name4: "PQR",
         name5: "Stationary",
         name6: "20",
@@ -399,7 +376,7 @@ export const purchasealldata = [
     {
         name1: "2",
         name2: "B123",
-        name3: "26 May,2024",
+        name3: "10 May,2024",
         name4: "PQR",
         name5: "Stationary",
         name6: "20",
@@ -422,7 +399,7 @@ export const purchasealldata = [
     {
         name1: "2",
         name2: "B123",
-        name3: "26 May,2024",
+        name3: "10 May,2024",
         name4: "PQR",
         name5: "Stationary",
         name6: "20",
@@ -445,7 +422,30 @@ export const purchasealldata = [
     {
         name1: "2",
         name2: "B123",
-        name3: "26 May,2024",
+        name3: "10 May,2024",
+        name4: "PQR",
+        name5: "Stationary",
+        name6: "20",
+        name7: "Pen",
+        name8: "Pending",
+        name9: "200",
+        name10: "4000",
+    },{
+        name1: "1",
+        name2: "A123",
+        name3: "26 Feb,2024",
+        name4: "XYZ",
+        name5: "Electronics",
+        name6: "100",
+        name7: "Phone",
+        name8: "Approved",
+        name9: "10",
+        name10: "1000",
+    },
+    {
+        name1: "2",
+        name2: "B123",
+        name3: "10 May,2024",
         name4: "PQR",
         name5: "Stationary",
         name6: "20",
@@ -1310,7 +1310,7 @@ export const allproductdata=[
         name4:"ABC Category",
         name5:"XYZ",
         name6:"10",
-        name7:"Out of Stock",
+        name7:"Out-of-Stock",
     },{
         name1:"1",
         name2:"NAME",
@@ -1336,7 +1336,7 @@ export const allproductdata=[
         name4:"ABC Category",
         name5:"XYZ",
         name6:"10",
-        name7:"Out of Stock",
+        name7:"Out-of-Stock",
     },{
         name1:"1",
         name2:"NAME",
@@ -1362,7 +1362,7 @@ export const allproductdata=[
         name4:"ABC Category",
         name5:"XYZ",
         name6:"10",
-        name7:"Out of Stock",
+        name7:"Out-of-Stock",
     },{
         name1:"1",
         name2:"NAME",
@@ -1388,7 +1388,7 @@ export const allproductdata=[
         name4:"ABC Category",
         name5:"XYZ",
         name6:"10",
-        name7:"Out of Stock",
+        name7:"Out-of-Stock",
     },{
         name1:"1",
         name2:"NAME",
@@ -1414,7 +1414,7 @@ export const allproductdata=[
         name4:"ABC Category",
         name5:"XYZ",
         name6:"10",
-        name7:"Out of Stock",
+        name7:"Out-of-Stock",
     },{
         name1:"1",
         name2:"NAME",
@@ -1440,7 +1440,7 @@ export const allproductdata=[
         name4:"ABC Category",
         name5:"XYZ",
         name6:"10",
-        name7:"Out of Stock",
+        name7:"Out-of-Stock",
     },{
         name1:"1",
         name2:"NAME",
@@ -1466,7 +1466,7 @@ export const allproductdata=[
         name4:"ABC Category",
         name5:"XYZ",
         name6:"10",
-        name7:"Out of Stock",
+        name7:"Out-of-Stock",
     },{
         name1:"1",
         name2:"NAME",
@@ -1492,7 +1492,7 @@ export const allproductdata=[
         name4:"ABC Category",
         name5:"XYZ",
         name6:"10",
-        name7:"Out of Stock",
+        name7:"Out-of-Stock",
     },{
         name1:"1",
         name2:"NAME",
@@ -1518,7 +1518,7 @@ export const allproductdata=[
         name4:"ABC Category",
         name5:"XYZ",
         name6:"10",
-        name7:"Out of Stock",
+        name7:"Out-of-Stock",
     },{
         name1:"1",
         name2:"NAME",
@@ -1544,7 +1544,7 @@ export const allproductdata=[
         name4:"ABC Category",
         name5:"XYZ",
         name6:"10",
-        name7:"Out of Stock",
+        name7:"Out-of-Stock",
     },{
         name1:"1",
         name2:"NAME",
@@ -1570,7 +1570,7 @@ export const allproductdata=[
         name4:"ABC Category",
         name5:"XYZ",
         name6:"10",
-        name7:"Out of Stock",
+        name7:"Out-of-Stock",
     },{
         name1:"1",
         name2:"NAME",
@@ -1596,7 +1596,7 @@ export const allproductdata=[
         name4:"ABC Category",
         name5:"XYZ",
         name6:"10",
-        name7:"Out of Stock",
+        name7:"Out-of-Stock",
     },{
         name1:"1",
         name2:"NAME",
@@ -1622,7 +1622,7 @@ export const allproductdata=[
         name4:"ABC Category",
         name5:"XYZ",
         name6:"10",
-        name7:"Out of Stock",
+        name7:"Out-of-Stock",
     },
     
 ]

@@ -1,4 +1,3 @@
-// import React from 'react'
 import "../Styles/Navbar.css"
 import Expand from "../Assets/sidebarexp.png"
 import A from "../Assets/Customers.png"
@@ -8,42 +7,8 @@ import D from "../Assets/Dashboard.png"
 import E from "../Assets/tabler_category-filled.png"
 import F from "../Assets/mage_tag-check.png"
 
-
-// const Navbar = () => {
-//   return (
-//     <>
-//         <div className='w-[5%] block navbar-main h-[100vh] absolute left-0'>
-//             <div className='flex items-center flex-col gap-[1.5rem] justify-center pt-[1.5rem]'>
-//             <div className=''>
-//                     <img src={Expand} alt='' className='h-[2.5rem]'/>
-//                 </div>
-//                 <div className=''>
-//                     <img src={D} alt='' className='h-[2.5rem]'/>
-//                 </div>
-//                 <div className=''>
-//                     <img src={A} alt='' className='h-[2.5rem]'/>
-//                 </div>
-//                 <div className=''>
-//                     <img src={F} alt='' className='h-[2.5rem]'/>
-//                 </div>
-//                 <div className=''>
-//                     <img src={B} alt='' className='h-[2.5rem]'/>
-//                 </div>
-//                 <div className=''>
-//                     <img src={E} alt='' className='h-[2.5rem]'/>
-//                 </div>
-//                 <div className=''>
-//                     <img src={C} alt='' className='h-[2.5rem]'/>
-//                 </div>
-//             </div>
-//         </div>
-//     </>
-//   )
-// }
-
-// export default Navbar
-
 import React, { useState } from 'react';
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
 
@@ -82,7 +47,7 @@ const Navbar = () => {
         {/* Dashboard */}
         <div className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
           <img src={D} alt="Dashboard" className="h-5 w-5 " />
-          <span>Dashboard</span>
+          <Link to="/"><span>Dashboard</span></Link>
         </div>
 
         {/* Manage Suppliers Dropdown */}
@@ -100,10 +65,10 @@ const Navbar = () => {
           {isSupplierDropdownOpen && (
             <div className="ml-8 flex flex-col space-y-1">
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer" >
-                <span>All Suppliers</span>
+                <Link to="/all-supplier"><span>All Suppliers</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>Add Supplier</span>
+                <Link to="/add-supplier"><span>Add Supplier</span></Link>
               </div>
             </div>
           )}
@@ -133,16 +98,16 @@ const Navbar = () => {
           {isCustomerDropdownOpen && (
             <div className="ml-8 flex flex-col space-y-1">
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>All Customers</span>
+                <Link to="/all-customer"><span>All Customers</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>Add Customer</span>
+                <Link to="/add-customer"><span>Add Customer</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>Credit Customers</span>
+              <Link to="/credit-customer"><span>Credit Customers</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>Customer Wise Report</span>
+                <Link to="/customer-wise-report"><span>Customer Wise Report</span></Link>
               </div>
             </div>
           )}
@@ -172,10 +137,10 @@ const Navbar = () => {
           {isUnitsDropdownOpen && (
             <div className="ml-8 flex flex-col space-y-1">
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>All Units</span>
+                <Link to="/all-unit"><span>All Units</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>Add Units</span>
+                <span>Add Unit</span>
               </div>
             </div>
           )}
@@ -204,7 +169,7 @@ const Navbar = () => {
           {isCategoriesDropdownOpen && (
             <div className="ml-8 flex flex-col space-y-1">
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>All Categories</span>
+                <Link to="/all-categorie"><span>All Categories</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
                 <span>Add Categories</span>
