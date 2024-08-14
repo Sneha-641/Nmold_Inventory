@@ -19,11 +19,11 @@ code {
 }
 .btn{
   background-color: rgba(98,131,247,1);
-  max-width:400px;
+  max-width:200px;
   padding:4px 3.6rem;
   display: flex;
   text-align: center;
-  height:2rem;
+  height:2.5rem;
   border-radius: 5px;
   cursor: pointer;
   color:white;
@@ -31,6 +31,7 @@ code {
   display: flex;
   justify-content: center;
   width:300px;
+  align-items: center;
 }
 .btn-small-w{
   background-color: #99ADFF;

@@ -48,10 +48,19 @@ function App() {
             <Route path="credit-customer" element={<CreditCustomer />} />
             <Route path="customer-wise-report" element={<CustomerWiseReport />} />
             <Route path="all-unit" element={<Units/>} />
-            <Route path="all-categorie" element={<AllCategories/>} />
-            <Route path="add-categorie" element={<AddCategory/>} />
-            
-            
+            <Route path="add-unit" element={<AddUnit ids={7}/>} />
+            <Route path="all-category" element={<AllCategories/>} />
+            <Route path="add-category" element={<AddCategory ids={10}/>} />
+            <Route path="all-product" element={<AllProducts/>} />
+            <Route path="add-product" element={<AddProduct/>} />
+            <Route path="all-purchase" element={<AllPurchase/>} />
+            <Route path="add-purchase" element={<AddPurchase/>} />
+            <Route path="purchase-report" element={<PurchaseReport/>} />
+            <Route path="all-invoice" element={<AllInvoice/>} />
+            <Route path="add-invoice" element={<AddInvoice/>} />
+            <Route path="print-invoice" element={<PrintInvoice/>} />
+            <Route path="daily-invoice-report" element={<DailyInvoiceReport/>} />
+            <Route path="all-stock" element={<AllStock/>} />    
         </Routes>
       </Router>
 

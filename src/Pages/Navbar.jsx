@@ -140,7 +140,7 @@ const Navbar = () => {
                 <Link to="/all-unit"><span>All Units</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>Add Unit</span>
+                <Link to="/add-unit"><span>Add Units</span></Link>
               </div>
             </div>
           )}
@@ -169,10 +169,10 @@ const Navbar = () => {
           {isCategoriesDropdownOpen && (
             <div className="ml-8 flex flex-col space-y-1">
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/all-categorie"><span>All Categories</span></Link>
+                <Link to="/all-category"><span>All Categories</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>Add Categories</span>
+                <Link to="/add-category"><span>Add Categories</span></Link>
               </div>
             </div>
           )}
@@ -193,10 +193,10 @@ const Navbar = () => {
           {isProductsDropdownOpen && (
             <div className="ml-8 flex flex-col space-y-1">
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>All Products</span>
+                <Link to="/all-product"><span>All Products</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>Add Products</span>
+                <Link to="/add-product"><span>Add Product</span></Link>
               </div>
             </div>
           )}
@@ -217,13 +217,13 @@ const Navbar = () => {
           {isPurchasesDropdownOpen && (
             <div className="ml-8 flex flex-col space-y-1">
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>All Purchase</span>
+                <Link to="/all-purchase"><span>All Purchases</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>Add Purchase</span>
+                <Link to="/add-purchase"><span>Add Purchase</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>Purchase Report</span>
+                <Link to="/purchase-report"><span>Purchase Report</span></Link>
               </div>
             </div>
           )}
@@ -244,16 +244,16 @@ const Navbar = () => {
           {isInvoicesDropdownOpen && (
             <div className="ml-8 flex flex-col space-y-1">
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>All Invoice</span>
+                <Link to="/all-invoice"><span>All Invoice</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>Add Invoice</span>
+                <Link to="/add-invoice"><span>Add Invoice</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>Print Invoice</span>
+                <Link to="/print-invoice"><span>Print Invoice</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>Daily Invoice Report</span>
+                <Link to="/daily-invoice-report"><span>Daily Invoice Report</span></Link>
               </div>
             </div>
           )}
@@ -274,7 +274,7 @@ const Navbar = () => {
           {isStocksDropdownOpen && (
             <div className="ml-8 flex flex-col space-y-1">
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <span>All Stocks</span>
+                <Link to="/all-stock"><span>All Stocks</span></Link>
               </div>
             </div>
           )}

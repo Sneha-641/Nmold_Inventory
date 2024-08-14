@@ -31,30 +31,7 @@ export const homedatacart = [
         img: CART
     },
 ]
-/*
- <td>
-                            Item
-                        </td>
-                        <td>
-                            Net Weight
-                        </td>
-                        <td>
-                            Supplier
-                        </td>
-                        <td>
-                            Received Date
-                        </td>
-                        <td>
-                            Last Issue
-                        </td>
-                        <td>
-                            Quantity
-                        </td>
-                        <td>
-                            Stock Lvl
-                        </td> 
-  
- */
+
 export const homedatatable = [
     {
         name1: 1,
