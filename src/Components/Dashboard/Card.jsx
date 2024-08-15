@@ -1,13 +1,15 @@
 import React from 'react'
 import {homedatacart} from "../../Data/index"
+import "../../Styles/Home.css"
+
 const Card = () => {
 
     
     return (
         <>
-            <div className='w-full overflow-x-scroll flex mt-8 gap-4'>
+             <div className='w-full flex mt-8 gap-4'>
                 {homedatacart.map((item, index)=> {
-                    return (<div className='dashboard-top-cards shadow-lg flex items-center justify-center flex-col'>
+                    return (<div className='dashboard-top-cards shadow-lg flex items-center justify-center flex-col custom-shadow'>
                         <div className='dash-top-card-img flex items-center justify-center p-4 rounded-[10px]'>
                             <img src={item.img} alt="" className='w-[2rem] h-[2rem]' />
                         </div>

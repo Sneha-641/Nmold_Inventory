@@ -59,6 +59,7 @@ const AllProductsComponent = () => {
                         </div>
                       <button className="px-4 py-2 bg-[#5884FF] text-white rounded-md">Add Products</button>
                       </div>
+                      <div className='table-scroll'>
                     <table className='w-full dash-table1 bg-white'>
                         <tr className='border border-solid cursor-pointer border-black h-[2rem]' style={{ backgroundColor: "white" }}>
                             <th
@@ -151,7 +152,7 @@ const AllProductsComponent = () => {
                                 </td>
                             </tr>
                         ))}
-                    </table>
+                    </table></div>
                 </div>
                 
                 <div className='bottom-pagination w-full right-0 flex justify-center items-center gap-2 mt-2'>

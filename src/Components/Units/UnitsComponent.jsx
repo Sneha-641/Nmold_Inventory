@@ -9,7 +9,7 @@ const UnitsComponent = () => {
     const [state, setstate] = React.useState(CategoriesData);
     const [dir, setdir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
-    const [interval, setinterval] = React.useState(10)
+    const [interval, setinterval] = React.useState(15)
     const sortdata = (key) => {
         if (dir === 'asc') {
             setdir('desc')
@@ -58,6 +58,7 @@ const UnitsComponent = () => {
                         </div>
                       <button className="px-4 py-2 bg-[#5884FF] text-white rounded-md">Add Unit</button>
                     </div>
+                    <div className='table-scroll'>
                     <table className='w-full dash-table1 bg-white'>
                         <tr className='border border-solid cursor-pointer border-black h-[2rem]' style={{ backgroundColor: "white" }}>
                             <th
@@ -129,6 +130,7 @@ const UnitsComponent = () => {
                             </tr>
                         ))}
                     </table>
+                    </div>
                 </div>
                 <div className='bottom-pagination w-full right-0 flex justify-center items-center gap-2 mt-2'>
                     <div className='flex gap-2'>

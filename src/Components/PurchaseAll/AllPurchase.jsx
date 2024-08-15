@@ -11,7 +11,7 @@ const PurchaseAllComponent = () => {
     const [state, setstate] = React.useState(purchasealldata);
     const [dir, setdir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
-    const [interval, setinterval] = React.useState(10)
+    const [interval, setinterval] = React.useState(15)
     const [num,setnumber]=React.useState(-1)
     const sortdata = (key) => { 
 
@@ -64,6 +64,7 @@ const PurchaseAllComponent = () => {
                         </div>
                       <button className="px-4 py-2 bg-[#5884FF] text-white rounded-md shadow-sm shadow-[#5884FF]">Add Purchase</button>
                       </div>
+                      <div className='table-scroll'>
                     <table className='w-full dash-table1 bg-white'>
                         <tr className='border border-solid table-header-row cursor-pointer ' style={{ backgroundColor: "white" }}>
                             <th
@@ -169,7 +170,7 @@ const PurchaseAllComponent = () => {
                                 </td>
                             </tr>
                         ))}
-                    </table>
+                    </table></div>
                 </div>
                 <div className='w-full bottom-pagination right-0 flex justify-center items-center gap-2 mt-2 bottom-pagination'>
                     <div className='flex gap-2'>

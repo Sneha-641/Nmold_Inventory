@@ -29,9 +29,11 @@
     margin: auto auto;
     margin-top:2rem;
     background-color: #F8F8F8;
+    background-color: rgb(88, 132, 255 , 0.1);
     width:95%;
     height:3rem;
     justify-content: center;
+    border-radius: 10px;
 }
 .home-table2 {
     /* background: linear-gradient(180deg, #005EE2, #5884FF); */
@@ -197,4 +199,17 @@
     @apply border border-gray-400;
     @apply p-1.5;
 
+}
+
+.custom-shadow{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* Bottom */
+    0 -4px 8px rgba(0, 0, 0, 0.1), /* Top */
+    4px 0 8px rgba(0, 0, 0, 0.1),  /* Right */
+   -4px 0 8px rgba(0, 0, 0, 0.1);  /* Left */
+}
+
+.table-scroll{
+    @apply w-full;
+    @apply h-[464px];
+    @apply overflow-y-auto;
 }

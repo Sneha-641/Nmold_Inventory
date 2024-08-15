@@ -9,7 +9,7 @@ const AllCustomerComponent = () => {
   const [state, setstate] = React.useState(customerdata);
   const [dir, setdir] = React.useState("asc");
   const [start, setstart] = React.useState(0);
-  const [interval, setinterval] = React.useState(10);
+  const [interval, setinterval] = React.useState(15);
   const sortdata = (key) => {
     if (dir === "asc") {
       setdir("desc");
@@ -63,6 +63,7 @@ const AllCustomerComponent = () => {
               Add Customer
             </button>
           </div>
+          <div className="table-scroll">
           <table className="w-full dash-table1 bg-white">
             <tr
               className="border border-solid cursor-pointer border-black h-[2rem]"
@@ -123,8 +124,9 @@ const AllCustomerComponent = () => {
               </tr>
             ))}
           </table>
+          </div>
         </div>
-        <div className=" bottom-pagination w-full right-0 flex justify-center items-center gap-2 mt-2">
+        <div className=" bottom-pagination w-full right-0 flex justify-center items-center gap-2 mt-2 bg-slate-600">
           <div className="flex gap-2">
             <div
               className=" home-gt-btn cursor-pointer"
