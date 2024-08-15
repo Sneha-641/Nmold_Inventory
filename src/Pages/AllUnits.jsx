@@ -1,5 +1,5 @@
 import React from 'react'
-import UnitsComponent from '../Components/Units/UnitsComponent'
+import UnitsComponent from '../Components/Units/AllUnitsComponent'
 
 const Units = () => {
     return (

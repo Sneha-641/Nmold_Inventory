@@ -5,7 +5,7 @@ const Table = () => {
     const [state, setstate] = React.useState(homedatatable);
     const [dir, setdir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
-    const [interval, setinterval] = React.useState(10)
+    const [interval, setinterval] = React.useState(15)
 
     const sortdata = (key) => {
         if (dir === 'asc') {
@@ -46,10 +46,10 @@ const Table = () => {
     return (
         <>
             <div className='home-table'>
-                <div className=' font-semibold text-[20px] my-4 '>
+                <div className=' font-semibold text-[20px] my-2 '>
                     Recently Added
                 </div>
-                <div className=''>
+                <div className='w-full h-[206px] overflow-y-auto'>
                     <table className='w-full dash-table1'>
                         <thead>
                             <tr className='cursor-pointer table-columns-heights table-header-row rounded-xl font-bold'>

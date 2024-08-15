@@ -1,5 +1,5 @@
 import React from 'react'
-import AllProductsComponent from '../Components/Others/AllProductsComponent'
+import AllProductsComponent from '../Components/Products/AllProductsComponent'
 
 const AllProducts = () => {
     return (

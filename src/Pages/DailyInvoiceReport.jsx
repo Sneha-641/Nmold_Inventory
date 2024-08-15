@@ -6,12 +6,12 @@ const DailyInvoiceReport = () => {
   return (
     <>
       <div className='ml-[16%]'>
-            <div className="flex justify-between items-center m-4">
+            <div className="flex justify-between items-center p-4">
                 <div className="flex items-center space-x-2">
                     <FontAwesomeIcon icon={faArrowLeft} />
                     <h2 className="text-xl font-semibold">Back</h2>
                 </div>
-                <button className="px-4 py-2 bg-[#5884FF] text-white rounded-md shadow-sm shadow-[#5884FF]">Add Stock</button>
+                
             </div>
             <div className='home-table2-type3 rounded-xl flex justify-center'>
                 <div className='pt-[1.6rem] flex flex-col items-center w-full '>

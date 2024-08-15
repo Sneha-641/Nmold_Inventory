@@ -6,6 +6,11 @@ import C from "../Assets/fluent-mdl2_product-list.png"
 import D from "../Assets/Dashboard.png"
 import E from "../Assets/tabler_category-filled.png"
 import F from "../Assets/mage_tag-check.png"
+import G from "../Assets/carbon_purchase.png"
+import H from "../Assets/basil_invoice-outline.png"
+import I from "../Assets/mdi_file-report-outline.png"
+import J from "../Assets/Question.png"
+import Z from "../Assets/Group 3.png"
 
 import React, { useState } from 'react';
 import { Link } from "react-router-dom"
@@ -38,7 +43,7 @@ const Navbar = () => {
     <div className="w-[16%] min-h-screen bg-[#5884FF] text-white flex flex-col p-4 space-y-2 absolute left-0  top-0">
       {/* Logo */}
       <div className="flex items-center space-x-2 mb-6 justify-center">
-        <img src={D} alt="Logo" className="h-10 w-10" />
+        <img src={Z} alt="Logo" className="h-10 w-10" />
         <span className="text-xl font-bold">Nvento</span>
       </div>
 
@@ -65,7 +70,7 @@ const Navbar = () => {
           {isSupplierDropdownOpen && (
             <div className="ml-8 flex flex-col space-y-1">
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer" >
-                <Link to="/all-supplier"><span>All Suppliers</span></Link>
+                <Link to="/all-suppliers"><span>All Suppliers</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
                 <Link to="/add-supplier"><span>Add Supplier</span></Link>
@@ -98,7 +103,7 @@ const Navbar = () => {
           {isCustomerDropdownOpen && (
             <div className="ml-8 flex flex-col space-y-1">
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/all-customer"><span>All Customers</span></Link>
+                <Link to="/all-customers"><span>All Customers</span></Link>
               </div>
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
                 <Link to="/add-customer"><span>Add Customer</span></Link>
@@ -206,7 +211,7 @@ const Navbar = () => {
         <div className="flex flex-col">
           <div className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer"
             onClick={togglePurchasesDropdown}>
-            <img src={B} alt="Manage Suppliers" className="h-5 w-5" />
+            <img src={G} alt="Manage Suppliers" className="h-5 w-5" />
             <span>Manage Purchase</span>
             <svg xmlns="http://www.w3.org/2000/svg"
               className={`h-4 w-4 ml-auto transition-transform ${isPurchasesDropdownOpen ? 'rotate-180' : ''}`}
@@ -233,7 +238,7 @@ const Navbar = () => {
         <div className="flex flex-col">
           <div className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer"
             onClick={toggleInvoicesDropdown}>
-            <img src={B} alt="Manage Suppliers" className="h-5 w-5" />
+            <img src={H} alt="Manage Suppliers" className="h-5 w-5" />
             <span>Manage Invoice</span>
             <svg xmlns="http://www.w3.org/2000/svg"
               className={`h-4 w-4 ml-auto transition-transform ${isInvoicesDropdownOpen ? 'rotate-180' : ''}`}
@@ -263,7 +268,7 @@ const Navbar = () => {
         <div className="flex flex-col">
           <div className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer"
             onClick={toggleStocksDropdown}>
-            <img src={B} alt="Manage Suppliers" className="h-5 w-5" />
+            <img src={I} alt="Manage Suppliers" className="h-5 w-5" />
             <span>Manage Stock</span>
             <svg xmlns="http://www.w3.org/2000/svg"
               className={`h-4 w-4 ml-auto transition-transform ${isStocksDropdownOpen ? 'rotate-180' : ''}`}
@@ -281,9 +286,10 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-          <img src={D} alt="Dashboard" className="h-5 w-5 " />
+          <img src={J} alt="Dashboard" className="h-5 w-5 " />
           <span>Help/Support</span>
         </div>
+        
         {/* Repeat for other menu items */}
         {/* Additional sections here */}
       </div>

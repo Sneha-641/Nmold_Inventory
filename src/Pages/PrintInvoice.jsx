@@ -1,5 +1,5 @@
 import React from 'react'
-import PrintInvoiceComponent from '../Components/Others/PrintInvoiceComponent'
+import PrintInvoiceComponent from '../Components/Invoices/PrintInvoiceComponent'
 
 
 const PrintInvoice = () => {

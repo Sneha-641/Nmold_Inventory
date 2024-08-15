@@ -7,10 +7,10 @@ import NewPassword from './NewPassword'
 import DeleteConfirmation from './DeleteConfirmation'
 import EnterPin from './EnterPin'
 import VerifyAgain from './VerifyAgain'
-import AddUnit from './AddUnit'
+import AddUnit from '../Units/AddUnit'
 import UpdateUnit from './UpdateUnit'
 import UpdateDue from './UpdateDue'
-import AddCategory from './AddCategory'
+import AddCategory from '../Categories/AddCategory'
 import UpdateCategory from './UpdateCategory'
 const PopUpMain = (id) => {
   const [ids, setids]=React.useState(id.id)

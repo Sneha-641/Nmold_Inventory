@@ -1,35 +1,47 @@
-import logo from './logo.svg';
 import './App.css';
-import Login from './Pages/Login';
-import Dashboard from './Pages/Dashboard';
-import Navbar from './Pages/Navbar';
 import TopNavbar from './Pages/TopNavbar';
-import AllPurchase from './Pages/AllPurchase';
-import AllCustomer from './Pages/AllCustomer';
-import AllSupplier from './Pages/Suppliers';
-import AddSupplier from './Components/AddForms/AddSupplier';
-import AllStock from './Pages/AllStock';
-import AllCategories from './Pages/AllCategories';
-import Units from './Pages/Units';
-import CustomerWiseReport from './Pages/CustomerWiseReport';
+import Navbar from './Pages/Navbar';
+import Dashboard from './Pages/Dashboard';
+import AllSuppliers from './Pages/AllSuppliers';
+import AddSupplier from './Components/Suppliers/AddSupplier';
+import AllCustomers from './Pages/AllCustomers';
+import AddCustomer from './Components/Customers/AddCustomer';
 import CreditCustomer from './Pages/CreditCustomer';
-import PrintInvoice from './Pages/PrintInvoice';
+import CustomerWiseReport from './Pages/CustomerWiseReport';
+import AllUnits from './Pages/AllUnits';
+import AddUnit from './Components/Units/AddUnit';
+import AllCategories from './Pages/AllCategories';
+import AddCategory from './Components/Categories/AddCategory';
 import AllProducts from './Pages/AllProducts';
+import AddProduct from './Components/Products/AddProduct';
+import AllPurchase from './Pages/AllPurchase';
+import AddPurchase from './Components/Purchases/AddPurchase';
+import PurchaseReport from './Pages/PurchaseReport';
 import AllInvoice from './Pages/AllInvoice';
+import AddInvoice from './Components/Invoices/AddInvoice';
+import PrintInvoice from './Pages/PrintInvoice';
+import DailyInvoiceReport from './Pages/DailyInvoiceReport';
+import AllStock from './Pages/AllStock';
+import Login from './Pages/Login';
+
+
+
+
+
+
+
+
 import AddForms from './Pages/AddForms';
-import AddCategory from './Components/PopupBox/AddCategory';
 import PopUpMain from './Components/PopupBox/PopUpMain';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import AddProduct from './Components/AddForms/AddProduct';
-import AddCustomer from './Components/AddForms/AddCustomer';
-import PrintInvoiceComponent from './Components/Others/PrintInvoiceComponent';
+
+import PrintInvoiceComponent from './Components/Invoices/PrintInvoiceComponent';
 import CustomerReport from './Pages/CustomerReport';
-import AddUnit from './Components/PopupBox/AddUnit';
-import AddPurchase from './Components/AddForms/AddPurchase';
-import AddInvoice from './Components/AddForms/AddInvoice';
+
+
 import InvoiceReport from './Pages/InvoiceReport';
-import DailyInvoiceReport from './Pages/DailyInvoiceReport';
-import PurchaseReport from './Pages/PurchaseReport';
+
+
 
 function App() {
   {/* ------------- Figma ---------  */}
@@ -41,13 +53,13 @@ function App() {
         <Navbar/>
         <Routes>
             <Route path="/" element={<Dashboard />} />
-            <Route path="all-supplier" element={<AllSupplier />} />
+            <Route path="all-suppliers" element={<AllSuppliers />} />
             <Route path="add-supplier" element={<AddSupplier />} />
-            <Route path="all-customer" element={<AllCustomer />} />
+            <Route path="all-customers" element={<AllCustomers />} />
             <Route path="add-customer" element={<AddCustomer />} />
             <Route path="credit-customer" element={<CreditCustomer />} />
             <Route path="customer-wise-report" element={<CustomerWiseReport />} />
-            <Route path="all-unit" element={<Units/>} />
+            <Route path="all-unit" element={<AllUnits/>} />
             <Route path="add-unit" element={<AddUnit ids={7}/>} />
             <Route path="all-category" element={<AllCategories/>} />
             <Route path="add-category" element={<AddCategory ids={10}/>} />
@@ -61,6 +73,7 @@ function App() {
             <Route path="print-invoice" element={<PrintInvoice/>} />
             <Route path="daily-invoice-report" element={<DailyInvoiceReport/>} />
             <Route path="all-stock" element={<AllStock/>} />    
+            {/* <Route path="invoice-report" element={<InvoiceReport/>} />     */}
         </Routes>
       </Router>
 

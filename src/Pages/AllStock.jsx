@@ -1,5 +1,5 @@
 import React from 'react'
-import StockAllComponent from '../Components/StockAll/AllStockComponent'
+import StockAllComponent from '../Components/Stocks/AllStockComponent'
 
 const StockAll = () => {
   return (

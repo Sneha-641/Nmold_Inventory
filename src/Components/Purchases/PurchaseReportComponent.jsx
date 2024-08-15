@@ -1,15 +1,20 @@
 import React from 'react'
-import { supplierdata } from '../../Data/index'
+import { purchasealldata } from '../../Data/index'
+import "../../Styles/Home.css"
 import "../../Styles/PurchaseAll.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
+import D from '../../Assets/download.png';
 
-const SupplierComponent = () => {
-    const [state, setstate] = React.useState(supplierdata);
+const PurchaseReportComponent = () => {
+    const [state, setstate] = React.useState(purchasealldata);
     const [dir, setdir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
     const [interval, setinterval] = React.useState(15)
-    const sortdata = (key) => {
+    const [num,setnumber]=React.useState(-1)
+    const sortdata = (key) => { 
+
         if (dir === 'asc') {
             setdir('desc')
             const sorteddata = [...state].sort((a, b) => {
@@ -45,53 +50,70 @@ const SupplierComponent = () => {
         })
         setstate(searchdata)
     }
+    console.log(start);
     React.useEffect(() => { }, []);
     return (
         <>
+            {/* <PopUpMain id={num}/> */}
             <div className='home-table2 rounded-xl'>
-                
                 <div className=''>
-                    <div className="flex justify-between items-center mb-4">
+                     <div className="flex justify-between items-center mb-4">
                         <div className="flex items-center space-x-2">
                             <FontAwesomeIcon icon={faArrowLeft} />
                             <h2 className="text-xl font-semibold">Back</h2>
                         </div>
-                      <button className="px-4 py-2 bg-[#5884FF] text-white rounded-md">Add Supplier</button>
-                    </div>
-                    <div className='table-scroll'>
-                    <table className='w-full dash-table1 bg-white '>
-                        <tr className='border border-solid cursor-pointer border-black h-[2rem]' style={{ backgroundColor: "white" }}>
+                        <div className='flex bg-[#5884FF]'>
+                            <button className="flex items-center px-4 py-2 bg-[#5884FF] text-white rounded-md shadow-sm shadow-[#5884FF]"><img src={D} alt="Logo" className="h-6 w-6 mr-2" />Download PDF</button>
+                        </div>
+                      
+                      </div>
+                      <div className='table-scroll'>
+                    <table className='w-full dash-table1 bg-white'>
+                        <tr className='border border-solid table-header-row cursor-pointer ' style={{ backgroundColor: "white" }}>
                             <th
                                 onClick={() => sortdata('name1')}
-                            >Sr. No.
+                            >
+                                S.No
                             </th>
                             <th
                                 onClick={() => sortdata('name2')}
-                            >Name
+                            >
+                                Purchase No.
                             </th>
                             <th
                                 onClick={() => sortdata('name3')}
-                            >Contact No.
+                            >
+                                Date
                             </th>
                             <th
-                                onClick={() => sortdata('name4')}
-                            >Email
+                                onClick={() => sortdata('name9')}
+                            >Price/Qty
                             </th>
                             <th
                                 onClick={() => sortdata('name5')}
-                            >Address
+                            >
+                                Category
+                            </th>
+                            <th onClick={() => sortdata('name6')}>
+                                Qty
                             </th>
                             <th
                                 onClick={() => sortdata('name7')}
-                            >Actions
+                            >
+                                Product Name
+                            </th>
+
+                            <th
+                                onClick={() => sortdata('name8')}
+                            >
+                                Total Price
                             </th>
                         </tr>
                         {state.slice(start, start + interval).map((item, index) => (
                             <tr className='h-[2rem]'>
                                 <td>
                                     <div className=''>
-
-                                        {item.name1}
+                                        {index + 1}
 
                                     </div>
                                 </td>
@@ -107,7 +129,7 @@ const SupplierComponent = () => {
                                 </td>
                                 <td>
                                     <div className=''>
-                                        {item.name4}
+                                        {item.name9}
                                     </div>
                                 </td>
                                 <td>
@@ -116,25 +138,28 @@ const SupplierComponent = () => {
                                     </div>
                                 </td>
                                 <td>
-                                    <div className='flex mx-auto justify-center text-center space-x-3'>
-                                        <div className='py-[2px] cursor-pointer'>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 15" fill="none">
-                                                <path d="M0.928711 11.8225V14.2291C0.928711 14.4508 1.11204 14.625 1.34538 14.625H3.87871C3.98704 14.625 4.09538 14.5854 4.17038 14.5062L13.2704 5.86915L10.1454 2.9004L1.05371 11.5375C0.970378 11.6166 0.928711 11.7116 0.928711 11.8225ZM15.687 3.57332C15.7643 3.50008 15.8256 3.41308 15.8674 3.31731C15.9092 3.22154 15.9307 3.11887 15.9307 3.01519C15.9307 2.91151 15.9092 2.80884 15.8674 2.71307C15.8256 2.6173 15.7643 2.53031 15.687 2.45707L13.737 0.604565C13.66 0.531175 13.5684 0.47295 13.4676 0.433223C13.3668 0.393496 13.2587 0.373047 13.1495 0.373047C13.0404 0.373047 12.9323 0.393496 12.8315 0.433223C12.7307 0.47295 12.6391 0.531175 12.562 0.604565L11.037 2.05331L14.162 5.02207L15.687 3.57332Z" fill="#5884FF" />
-                                            </svg>
-                                        </div>
-                                        <div className='py-[2px] cursor-pointer '>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 13 15" fill="none">
-                                                <path d="M9.34521 1.16667L8.51188 0.375H4.34522L3.51188 1.16667H0.595215V2.75H12.2619V1.16667H9.34521ZM1.42855 13.0417C1.42855 13.9125 2.17855 14.625 3.09521 14.625H9.76188C10.6785 14.625 11.4285 13.9125 11.4285 13.0417V3.54167H1.42855V13.0417ZM3.09521 5.125H9.76188V13.0417H3.09521V5.125Z" fill="#5884FF" />
-                                            </svg>
-                                        </div>
+                                    <div className=''>
+                                        {item.name6}
                                     </div>
+                                </td>
+
+                                <td>
+                                    <div className=''>
+                                        {item.name7}
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>{item.name10}</div>
                                 </td>
                             </tr>
                         ))}
-                    </table>
-                    </div>
+                        <tr className='font-semibold'>
+                            <td  colSpan="7" className='text-right pr-12 uppercase '>Grand Total</td>
+                            <td className=''>Rs. 36000</td>
+                        </tr>
+                    </table></div>
                 </div>
-                <div className=' bottom-pagination w-full right-0 flex justify-center items-center gap-2 mt-2'>
+                <div className='w-full bottom-pagination right-0 flex justify-center items-center gap-2 mt-2 bottom-pagination'>
                     <div className='flex gap-2'>
                         <div className=' home-gt-btn cursor-pointer'
                             onClick={() => {
@@ -181,4 +206,4 @@ const SupplierComponent = () => {
     )
 }
 
-export default SupplierComponent
+export default PurchaseReportComponent

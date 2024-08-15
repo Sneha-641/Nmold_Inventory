@@ -1,20 +1,17 @@
 import React from 'react'
-import { purchasealldata } from '../../Data/index'
+import { CategoriesData } from '../../Data/index'
 import "../../Styles/Home.css"
 import "../../Styles/PurchaseAll.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import AddCategory from '../PopupBox/AddCategory'
-import PopUpMain from '../PopupBox/PopUpMain'
+import { Link } from 'react-router-dom';
 
-const PurchaseAllComponent = () => {
-    const [state, setstate] = React.useState(purchasealldata);
+const AllUnitsComponent = () => {
+    const [state, setstate] = React.useState(CategoriesData);
     const [dir, setdir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
     const [interval, setinterval] = React.useState(15)
-    const [num,setnumber]=React.useState(-1)
-    const sortdata = (key) => { 
-
+    const sortdata = (key) => {
         if (dir === 'asc') {
             setdir('desc')
             const sorteddata = [...state].sort((a, b) => {
@@ -50,72 +47,50 @@ const PurchaseAllComponent = () => {
         })
         setstate(searchdata)
     }
-    console.log(start);
     React.useEffect(() => { }, []);
     return (
         <>
-            {/* <PopUpMain id={num}/> */}
             <div className='home-table2 rounded-xl'>
                 <div className=''>
-                     <div className="flex justify-between items-center mb-4">
+                    <div className="flex justify-between items-center mb-4">
                         <div className="flex items-center space-x-2">
                             <FontAwesomeIcon icon={faArrowLeft} />
                             <h2 className="text-xl font-semibold">Back</h2>
                         </div>
-                      <button className="px-4 py-2 bg-[#5884FF] text-white rounded-md shadow-sm shadow-[#5884FF]">Add Purchase</button>
-                      </div>
-                      <div className='table-scroll'>
+                      <Link to="/add-unit"><button className="px-4 py-2 bg-[#5884FF] text-white rounded-md">Add Unit</button></Link>
+                    </div>
+                    <div className='table-scroll'>
                     <table className='w-full dash-table1 bg-white'>
-                        <tr className='border border-solid table-header-row cursor-pointer ' style={{ backgroundColor: "white" }}>
+                        <tr className='border border-solid cursor-pointer border-black h-[2rem]' style={{ backgroundColor: "white" }}>
                             <th
                                 onClick={() => sortdata('name1')}
-                            >
-                                S.No
+                            >Sr. No.
                             </th>
                             <th
                                 onClick={() => sortdata('name2')}
-                            >
-                                Purchase No.
+                            >Unit
                             </th>
                             <th
                                 onClick={() => sortdata('name3')}
-                            >
-                                Date
+                            >Abbreviation
                             </th>
                             <th
-                                onClick={() => sortdata('name4')}
+                                
                             >
-                                Supplier
+                                Edit
                             </th>
                             <th
-                                onClick={() => sortdata('name5')}
+                                
                             >
-                                Category
-                            </th>
-                            <th onClick={() => sortdata('name6')}>
-                                Qty
-                            </th>
-                            <th
-                                onClick={() => sortdata('name7')}
-                            >
-                                Product Name
-                            </th>
-
-                            <th
-                                onClick={() => sortdata('name8')}
-                            >
-                                Status
-                            </th>
-                            <th
-                            >
-                                Action
+                                Delete
                             </th>
                         </tr>
                         {state.slice(start, start + interval).map((item, index) => (
                             <tr className='h-[2rem]'>
                                 <td>
                                     <div className=''>
-                                        {index + 1}
+
+                                        {item.name1}
 
                                     </div>
                                 </td>
@@ -131,48 +106,34 @@ const PurchaseAllComponent = () => {
                                 </td>
                                 <td>
                                     <div className=''>
-                                        {item.name4}
+                                        <div className='py-[2px] cursor-pointer flex gap-3 px-4 justify-center items-center'>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 15" fill="none">
+                                                <path d="M0.928711 11.8225V14.2291C0.928711 14.4508 1.11204 14.625 1.34538 14.625H3.87871C3.98704 14.625 4.09538 14.5854 4.17038 14.5062L13.2704 5.86915L10.1454 2.9004L1.05371 11.5375C0.970378 11.6166 0.928711 11.7116 0.928711 11.8225ZM15.687 3.57332C15.7643 3.50008 15.8256 3.41308 15.8674 3.31731C15.9092 3.22154 15.9307 3.11887 15.9307 3.01519C15.9307 2.91151 15.9092 2.80884 15.8674 2.71307C15.8256 2.6173 15.7643 2.53031 15.687 2.45707L13.737 0.604565C13.66 0.531175 13.5684 0.47295 13.4676 0.433223C13.3668 0.393496 13.2587 0.373047 13.1495 0.373047C13.0404 0.373047 12.9323 0.393496 12.8315 0.433223C12.7307 0.47295 12.6391 0.531175 12.562 0.604565L11.037 2.05331L14.162 5.02207L15.687 3.57332Z" fill="#5884FF" />
+                                            </svg>
+                                            <div className=''>
+                                                Edit
+                                            </div>
+                                        </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div className=''>
-                                        {item.name5}
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className=''>
-                                        {item.name6}
-                                    </div>
-                                </td>
-
-                                <td>
-                                    <div className=''>
-                                        {item.name7}
-                                    </div>
-                                </td>
-                                <td>
-                                    {item.name8 === "Approved" && <div className='mx-auto bg-green-600 w-[fit-content] approved-btn px-3 rounded-full'>
-                                        {item.name8}
-                                    </div>}
-                                    {item.name8 === "Mid" && <div className='mx-auto bg-blue-600 w-[fit-content] px-3 rounded-full'>
-                                        {item.name8}
-                                    </div>}
-                                    {item.name8 === "Pending" && <div className='mx-auto bg-red-600 w-[fit-content] rejected-btn px-3 rounded-full'>
-                                        {item.name8}
-                                    </div>}
-                                </td>
-                                <td>
-                                    <div className=' flex items-center justify-center py-[2px] cursor-pointer' onClick={()=>{setnumber(10)}}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 15" fill="none">
-                                            <path d="M0.928711 11.8225V14.2291C0.928711 14.4508 1.11204 14.625 1.34538 14.625H3.87871C3.98704 14.625 4.09538 14.5854 4.17038 14.5062L13.2704 5.86915L10.1454 2.9004L1.05371 11.5375C0.970378 11.6166 0.928711 11.7116 0.928711 11.8225ZM15.687 3.57332C15.7643 3.50008 15.8256 3.41308 15.8674 3.31731C15.9092 3.22154 15.9307 3.11887 15.9307 3.01519C15.9307 2.91151 15.9092 2.80884 15.8674 2.71307C15.8256 2.6173 15.7643 2.53031 15.687 2.45707L13.737 0.604565C13.66 0.531175 13.5684 0.47295 13.4676 0.433223C13.3668 0.393496 13.2587 0.373047 13.1495 0.373047C13.0404 0.373047 12.9323 0.393496 12.8315 0.433223C12.7307 0.47295 12.6391 0.531175 12.562 0.604565L11.037 2.05331L14.162 5.02207L15.687 3.57332Z" fill="#5884FF" />
-                                        </svg>
+                                        <div className='py-[2px] cursor-pointer flex gap-3 px-4 justify-center items-center'>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 13 15" fill="none">
+                                                <path d="M9.34521 1.16667L8.51188 0.375H4.34522L3.51188 1.16667H0.595215V2.75H12.2619V1.16667H9.34521ZM1.42855 13.0417C1.42855 13.9125 2.17855 14.625 3.09521 14.625H9.76188C10.6785 14.625 11.4285 13.9125 11.4285 13.0417V3.54167H1.42855V13.0417ZM3.09521 5.125H9.76188V13.0417H3.09521V5.125Z" fill="#5884FF" />
+                                            </svg>
+                                            <div className=''>
+                                                Delete
+                                            </div>
+                                        </div>
                                     </div>
                                 </td>
                             </tr>
                         ))}
-                    </table></div>
+                    </table>
+                    </div>
                 </div>
-                <div className='w-full bottom-pagination right-0 flex justify-center items-center gap-2 mt-2 bottom-pagination'>
+                <div className='bottom-pagination w-full right-0 flex justify-center items-center gap-2 mt-2'>
                     <div className='flex gap-2'>
                         <div className=' home-gt-btn cursor-pointer'
                             onClick={() => {
@@ -219,4 +180,4 @@ const PurchaseAllComponent = () => {
     )
 }
 
-export default PurchaseAllComponent
+export default AllUnitsComponent

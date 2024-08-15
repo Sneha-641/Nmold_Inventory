@@ -1,7 +1,7 @@
 import React from 'react'
-import AddProduct from '../Components/AddForms/AddProduct'
-import AddInvoice from '../Components/AddForms/AddInvoice'
-import AddPurchase from '../Components/AddForms/AddPurchase'
+import AddProduct from '../Components/Products/AddProduct'
+import AddInvoice from '../Components/Invoices/AddInvoice'
+import AddPurchase from '../Components/Purchases/AddPurchase'
 
 const AddForms = () => {
   return (

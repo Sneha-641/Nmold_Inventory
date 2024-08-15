@@ -1,18 +1,16 @@
 import React from 'react'
-import { purchasealldata } from '../../Data/index'
+import { stockData } from '../../Data/index'
 import "../../Styles/Home.css"
 import "../../Styles/PurchaseAll.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-const PurchaseReportComponent = () => {
-    const [state, setstate] = React.useState(purchasealldata);
+const AllStockComponent = () => {
+    const [state, setstate] = React.useState(stockData);
     const [dir, setdir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
     const [interval, setinterval] = React.useState(15)
-    const [num,setnumber]=React.useState(-1)
-    const sortdata = (key) => { 
-
+    const sortdata = (key) => {
         if (dir === 'asc') {
             setdir('desc')
             const sorteddata = [...state].sort((a, b) => {
@@ -48,73 +46,72 @@ const PurchaseReportComponent = () => {
         })
         setstate(searchdata)
     }
-    console.log(start);
     React.useEffect(() => { }, []);
     return (
         <>
-            {/* <PopUpMain id={num}/> */}
             <div className='home-table2 rounded-xl'>
                 <div className=''>
-                     <div className="flex justify-between items-center mb-4">
+                    <div className="flex justify-between items-center mb-4">
                         <div className="flex items-center space-x-2">
                             <FontAwesomeIcon icon={faArrowLeft} />
                             <h2 className="text-xl font-semibold">Back</h2>
                         </div>
-                      <button className="px-4 py-2 bg-[#5884FF] text-white rounded-md shadow-sm shadow-[#5884FF]">Download PDF</button>
+                      <button className="px-4 py-2 bg-[#5884FF] text-white rounded-md shadow-sm shadow-[#5884FF]">Add Stock</button>
                       </div>
                       <div className='table-scroll'>
                     <table className='w-full dash-table1 bg-white'>
-                        <tr className='border border-solid table-header-row cursor-pointer ' style={{ backgroundColor: "white" }}>
+                        <tr className='border border-solid cursor-pointer border-black h-[2rem]' style={{ backgroundColor: "white" }}>
                             <th
                                 onClick={() => sortdata('name1')}
                             >
-                                S.No
+                                S.No.
+                            </th>
+                            <th
+                                onClick={() => sortdata('name1')}
+                            >
+                                Stock No.
                             </th>
                             <th
                                 onClick={() => sortdata('name2')}
                             >
-                                Purchase No.
+                                Date
                             </th>
                             <th
                                 onClick={() => sortdata('name3')}
                             >
-                                Date
+                                Supplier
                             </th>
                             <th
-                                onClick={() => sortdata('name9')}
-                            >Price/Qty
+                                onClick={() => sortdata('name4')}
+                            >
+                                Category
                             </th>
                             <th
                                 onClick={() => sortdata('name5')}
                             >
-                                Category
-                            </th>
-                            <th onClick={() => sortdata('name6')}>
                                 Qty
                             </th>
-                            <th
-                                onClick={() => sortdata('name7')}
-                            >
+                            <th onClick={() => sortdata('name6')}>
                                 Product Name
                             </th>
-
-                            <th
-                                onClick={() => sortdata('name8')}
-                            >
-                                Total Price
+                            <th onClick={() => sortdata('name6')}>
+                                Status
                             </th>
                         </tr>
                         {state.slice(start, start + interval).map((item, index) => (
                             <tr className='h-[2rem]'>
                                 <td>
                                     <div className=''>
-                                        {index + 1}
+
+                                        {item.name1}
 
                                     </div>
                                 </td>
                                 <td>
                                     <div className=''>
+
                                         {item.name2}
+
                                     </div>
                                 </td>
                                 <td>
@@ -124,7 +121,7 @@ const PurchaseReportComponent = () => {
                                 </td>
                                 <td>
                                     <div className=''>
-                                        {item.name9}
+                                        {item.name4}
                                     </div>
                                 </td>
                                 <td>
@@ -137,24 +134,29 @@ const PurchaseReportComponent = () => {
                                         {item.name6}
                                     </div>
                                 </td>
-
                                 <td>
                                     <div className=''>
                                         {item.name7}
                                     </div>
                                 </td>
-                                <td>
-                                    <div>{item.name10}</div>
+
+                                <td className=''>
+                                    <div className='flex justify-center items-center' style={{ backgroundColor: "" }}>
+                                        {item.name8 === "Full" && <div className='text-white bg-green-600 w-[fit-content] px-3 rounded-full flex items-center'
+                                            >
+                                            {item.name8}
+                                        </div>}
+                                        {item.name8 === "Incomplete" && <div className='text-white bg-red-600 w-[fit-content] px-3 rounded-full'
+                                            >
+                                            {item.name8}
+                                        </div>}
+                                    </div>
                                 </td>
                             </tr>
                         ))}
-                        <tr className='font-semibold'>
-                            <td  colSpan="7" className='text-right pr-12 uppercase '>Grand Total</td>
-                            <td className=''>Rs. 36000</td>
-                        </tr>
                     </table></div>
                 </div>
-                <div className='w-full bottom-pagination right-0 flex justify-center items-center gap-2 mt-2 bottom-pagination'>
+                <div className=' bottom-pagination w-full right-0 flex justify-center items-center gap-2 mt-2'>
                     <div className='flex gap-2'>
                         <div className=' home-gt-btn cursor-pointer'
                             onClick={() => {
@@ -201,4 +203,4 @@ const PurchaseReportComponent = () => {
     )
 }
 
-export default PurchaseReportComponent
+export default AllStockComponent

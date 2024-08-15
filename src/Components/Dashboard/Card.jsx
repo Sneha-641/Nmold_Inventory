@@ -7,7 +7,7 @@ const Card = () => {
     
     return (
         <>
-             <div className='w-full flex mt-8 gap-4'>
+             <div className='w-full flex  mt-4 gap-4'>
                 {homedatacart.map((item, index)=> {
                     return (<div className='dashboard-top-cards shadow-lg flex items-center justify-center flex-col custom-shadow'>
                         <div className='dash-top-card-img flex items-center justify-center p-4 rounded-[10px]'>

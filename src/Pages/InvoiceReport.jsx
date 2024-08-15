@@ -1,5 +1,5 @@
 import React from 'react'
-import InvoiceReportComponent from '../Components/Others/InvoiceReportComponent'
+import InvoiceReportComponent from '../Components/Invoices/InvoiceReportComponent'
 
 const InvoiceReport = () => {
   return (

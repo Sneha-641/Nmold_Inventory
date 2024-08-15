@@ -1,5 +1,5 @@
 import React from 'react'
-import DueCustomersComponent from '../Components/Others/CreditCustomer'
+import DueCustomersComponent from '../Components/Customers/CreditCustomerComponent'
 
 const DueCustomers = () => {
   return (
