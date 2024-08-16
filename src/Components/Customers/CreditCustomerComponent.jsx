@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { customerReportData } from '../../Data/index'
 import "../../Styles/Home.css"
 import "../../Styles/PurchaseAll.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import PopUpMain from '../PopupBox/PopUpMain';
 
 const CreditCustomerComponent = () => {
     const [state, setstate] = React.useState(customerReportData);
     const [dir, setdir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
     const [interval, setinterval] = React.useState(15)
+    const [showPopup, setShowPopup] = useState(false);
+    const [popupAction, setPopupAction] = useState(null); 
+    const [selectedId, setSelectedId] = useState(null); 
+
     const sortdata = (key) => {
         if (dir === 'asc') {
             setdir('desc')
@@ -49,8 +54,17 @@ const CreditCustomerComponent = () => {
     }
     console.log(start);
     React.useEffect(() => { }, []);
+
+    const handlePopup = (action, id) => {
+        setPopupAction(action);
+        setSelectedId(id);
+        setShowPopup(true);
+    };
+
     return (
         <>
+            {showPopup && popupAction === 'update' && <PopUpMain ids={selectedId} setShowPopup={setShowPopup} />}
+            {showPopup && popupAction === 'enterPin' && <PopUpMain ids={selectedId} setShowPopup={setShowPopup} />}
             <div className='home-table2 rounded-xl'>
                 <div className=''>
                     <div className="flex justify-between items-center mb-4">
@@ -67,7 +81,7 @@ const CreditCustomerComponent = () => {
                         <tr className='border border-solid cursor-pointer border-black h-[2rem]' style={{ backgroundColor: "white" }}>
                             <th onClick={() => sortdata('name1')}>Sr. No.</th>
                             <th onClick={() => sortdata('name2')}>Name</th>
-                            <th onClick={() => sortdata('name3')}>Amount Due</th>
+                            <th>Amount Due</th>
                             <th onClick={() => sortdata('name4')}>Email</th>
                             <th onClick={() => sortdata('name5')}>Address</th>
                             <th>Edit</th>
@@ -81,7 +95,7 @@ const CreditCustomerComponent = () => {
                                     <div className=''>{item.name2}</div>
                                 </td>
                                 <td>
-                                    <div className=''>{item.name3}</div>
+                                    <div className='cursor-pointer' onClick={() => handlePopup('enterPin',5)}>{item.name3}</div>
                                 </td>
                                 <td>
                                     <div className=''>{item.name4}</div>
@@ -92,12 +106,11 @@ const CreditCustomerComponent = () => {
                                 <td>
                                     <div className=''>
                                         <div className='flex items-center justify-center gap-2 cursor-pointer'>
-                                            <div className=''>
+                                            <div className='' onClick={()=>handlePopup('update',19)}>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 15" fill="none">
                                                     <path d="M0.928711 11.8225V14.2291C0.928711 14.4508 1.11204 14.625 1.34538 14.625H3.87871C3.98704 14.625 4.09538 14.5854 4.17038 14.5062L13.2704 5.86915L10.1454 2.9004L1.05371 11.5375C0.970378 11.6166 0.928711 11.7116 0.928711 11.8225ZM15.687 3.57332C15.7643 3.50008 15.8256 3.41308 15.8674 3.31731C15.9092 3.22154 15.9307 3.11887 15.9307 3.01519C15.9307 2.91151 15.9092 2.80884 15.8674 2.71307C15.8256 2.6173 15.7643 2.53031 15.687 2.45707L13.737 0.604565C13.66 0.531175 13.5684 0.47295 13.4676 0.433223C13.3668 0.393496 13.2587 0.373047 13.1495 0.373047C13.0404 0.373047 12.9323 0.393496 12.8315 0.433223C12.7307 0.47295 12.6391 0.531175 12.562 0.604565L11.037 2.05331L14.162 5.02207L15.687 3.57332Z" fill="#5884FF" />
                                                 </svg>
                                             </div>
-                                            <div className=''>Edit</div>
                                         </div>
                                     </div>
                                 </td>

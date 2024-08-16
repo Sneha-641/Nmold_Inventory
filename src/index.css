@@ -38,10 +38,10 @@ code {
 }
 .btn-small-w{
   background-color: #99ADFF;
-  max-width:280px;
-  padding:4px 2.6rem;
+  max-width:250px;
+  padding: 10px 2.6rem;
   display: flex;
   text-align: center;
-  border-radius: 15px;
+  border-radius: 8px;
   cursor: pointer;
 }

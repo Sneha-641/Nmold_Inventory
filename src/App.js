@@ -23,23 +23,15 @@ import PrintInvoice from './Pages/PrintInvoice';
 import DailyInvoiceReport from './Pages/DailyInvoiceReport';
 import AllStock from './Pages/AllStock';
 import Login from './Pages/Login';
-
-
-
-
-
-
-
-
 import AddForms from './Pages/AddForms';
 import PopUpMain from './Components/PopupBox/PopUpMain';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
 import PrintInvoiceComponent from './Components/Invoices/PrintInvoiceComponent';
 import CustomerReport from './Pages/CustomerReport';
-
-
 import InvoiceReport from './Pages/InvoiceReport';
+import UpdateCategory from './Components/PopupBox/UpdateCategory';
+import UpdateSupplier from './Components/PopupBox/UpdateSupplier';
+
 
 
 
@@ -51,6 +43,7 @@ function App() {
       <Router>
         <TopNavbar/>
         <Navbar/>
+        {/* <PopUpMain ids={18}/> */}
         <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="all-suppliers" element={<AllSuppliers />} />

@@ -1,4 +1,6 @@
 import React from 'react'
+import UpdateSupplier from './UpdateSupplier'
+import UpdateCustomer from './UpdateCustomer'
 import ForgotPassword from './ForgotPassword'
 import "../../Styles/Login.css"
 import "./PopupBox.css"
@@ -12,11 +14,28 @@ import UpdateUnit from './UpdateUnit'
 import UpdateDue from './UpdateDue'
 import AddCategory from '../Categories/AddCategory'
 import UpdateCategory from './UpdateCategory'
-const PopUpMain = (id) => {
-  const [ids, setids]=React.useState(id.id)
+import CustomerReport from '../../Pages/CustomerReport'
+import CustomerReportComponent from '../Customers/CustomerReportComponent'
+
+const PopUpMain = ({ ids, setShowPopup }) => {
   return (
-    <div className='absolute w-full h-full z-[99] model-box'>
-      {/* <ForgotPassword ids={ids} setids={setids} />
+    <div className='model-box'>
+      <div className='popup-content'>
+      <CustomerReportComponent ids={ids} setids={() => setShowPopup(false)}/>
+      <EnterPin ids={ids} setids={()=> setShowPopup(false)}/>
+      <UpdateSupplier ids={ids} setids={() => setShowPopup(false)}/>
+      <DeleteConfirmation ids={ids} setids={()=>setShowPopup(false)}/>
+      <UpdateCustomer ids={ids} setids={() => setShowPopup(false)}/>
+      </div>
+    </div>
+
+  )
+}
+
+export default PopUpMain
+
+
+{/* <ForgotPassword ids={ids} setids={setids} />
       <EnterOTP ids={ids} setids={setids} />
       <NewPassword ids={ids} setids={setids} />
       <DeleteConfirmation ids={ids} setids={setids} />
@@ -25,10 +44,5 @@ const PopUpMain = (id) => {
       <AddUnit ids={ids} setids={setids} />
       <UpdateUnit ids={ids} setids={setids} />
       <UpdateDue ids={ids} setids={setids} /> */}
-      <AddCategory ids={ids} setids={setids} />
+      {/* <AddCategory ids={ids} setids={setids} /> */}
       {/* <UpdateCategory ids={ids} setids={setids} /> */}
-    </div>
-  )
-}
-
-export default PopUpMain

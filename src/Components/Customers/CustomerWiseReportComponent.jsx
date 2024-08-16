@@ -1,16 +1,20 @@
-import React from 'react'
+import React , {useState} from 'react'
 import { customerReportData } from '../../Data/index'
 import "../../Styles/Home.css"
 import "../../Styles/PurchaseAll.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import CustomerReport from '../../Pages/CustomerReport';
+import PopUpMain from '../PopupBox/PopUpMain';
 
 const CustomerWiseReportComponent = () => {
     const [state, setstate] = React.useState(customerReportData);
     const [dir, setdir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
     const [interval, setinterval] = React.useState(15)
+    const [showPopup, setShowPopup] = useState(false);
+
     const sortdata = (key) => {
         if (dir === 'asc') {
             setdir('desc')
@@ -51,6 +55,7 @@ const CustomerWiseReportComponent = () => {
     React.useEffect(() => { }, []);
     return (
         <>
+            {showPopup && <PopUpMain ids={20} setShowPopup={setShowPopup} />}
             <div className='home-table2 rounded-xl'>
                 
                 <div className=''>
@@ -121,7 +126,7 @@ const CustomerWiseReportComponent = () => {
                                 <div className=''>
 
                                     <div className='flex items-center justify-center gap-2 cursor-pointer'>
-                                        <div className=''>
+                                        <div className='' onClick={()=> setShowPopup(true)}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30" fill="none">
                                                 <g clip-path="url(#clip0_193_3526)">
                                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4004 22C10.0064 22 5.46039 19.244 2.59239 15C5.46039 10.756 10.0064 8 15.4004 8C20.7944 8 25.3404 10.756 28.2084 15C25.3404 19.244 20.7944 22 15.4004 22ZM15.4004 6C9.01639 6 3.71239 9.412 0.552393 14.47C0.45306 14.6289 0.400391 14.8126 0.400391 15C0.400391 15.1874 0.45306 15.3711 0.552393 15.53C3.71239 20.588 9.01639 24 15.4004 24C21.7844 24 27.0884 20.588 30.2484 15.53C30.3477 15.3711 30.4004 15.1874 30.4004 15C30.4004 14.8126 30.3477 14.6289 30.2484 14.47C27.0884 9.412 21.7844 6 15.4004 6ZM15.4004 19C16.4613 19 17.4787 18.5786 18.2288 17.8284C18.979 17.0783 19.4004 16.0609 19.4004 15C19.4004 13.9391 18.979 12.9217 18.2288 12.1716C17.4787 11.4214 16.4613 11 15.4004 11C14.3395 11 13.3221 11.4214 12.572 12.1716C11.8218 12.9217 11.4004 13.9391 11.4004 15C11.4004 16.0609 11.8218 17.0783 12.572 17.8284C13.3221 18.5786 14.3395 19 15.4004 19Z" fill="#5884FF" />
