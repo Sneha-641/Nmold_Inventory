@@ -43,7 +43,6 @@ function App() {
       <Router>
         <TopNavbar/>
         <Navbar/>
-        {/* <PopUpMain ids={18}/> */}
         <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="all-suppliers" element={<AllSuppliers />} />
@@ -53,9 +52,9 @@ function App() {
             <Route path="credit-customer" element={<CreditCustomer />} />
             <Route path="customer-wise-report" element={<CustomerWiseReport />} />
             <Route path="all-unit" element={<AllUnits/>} />
-            <Route path="add-unit" element={<AddUnit ids={7}/>} />
+            {/* <Route path="add-unit" element={<AddUnit ids={7}/>} /> */}
             <Route path="all-category" element={<AllCategories/>} />
-            <Route path="add-category" element={<AddCategory ids={10}/>} />
+            {/* <Route path="add-category" element={<AddCategory ids={10}/>} /> */}
             <Route path="all-product" element={<AllProducts/>} />
             <Route path="add-product" element={<AddProduct/>} />
             <Route path="all-purchase" element={<AllPurchase/>} />

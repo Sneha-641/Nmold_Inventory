@@ -16,6 +16,7 @@ import AddCategory from '../Categories/AddCategory'
 import UpdateCategory from './UpdateCategory'
 import CustomerReport from '../../Pages/CustomerReport'
 import CustomerReportComponent from '../Customers/CustomerReportComponent'
+import UpdateProduct from './UpdateProduct'
 
 const PopUpMain = ({ ids, setShowPopup }) => {
   return (
@@ -26,6 +27,11 @@ const PopUpMain = ({ ids, setShowPopup }) => {
       <UpdateSupplier ids={ids} setids={() => setShowPopup(false)}/>
       <DeleteConfirmation ids={ids} setids={()=>setShowPopup(false)}/>
       <UpdateCustomer ids={ids} setids={() => setShowPopup(false)}/>
+      <AddUnit ids={ids} setids={()=> setShowPopup(false)}/>
+      <UpdateUnit ids={ids} setids={()=> setShowPopup(false)}/>
+      <AddCategory ids={ids} setids={()=>setShowPopup(false)}/>
+      <UpdateCategory ids={ids} setids={()=>setShowPopup(false)}/>
+      <UpdateProduct ids={ids} setids={()=> setShowPopup(false)}/>
       </div>
     </div>
 

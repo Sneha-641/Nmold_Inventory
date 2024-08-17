@@ -1,31 +1,24 @@
-import React from 'react'
+import React from 'react';
+import Img from '../../Assets/addunit.png';
 
-const AddUnit = ({ ids, setids }) => {
+const EnterPin = ({ ids, setids }) => {
     return (
-        <>
-            <div className={`${ids === 7 ? "" : "hidden"}`}>
-            <div className='ml-[16%]'>
-                <div className='bg-white m-auto w-[379px] mt-[15%] p-4 flex flex-col gap-4 rounded-xl border-2 border-[#5884FF]'>
-                    <div className='' onClick={() => { setids(0) }}>
-                        <h1 className='text-[1.5rem] text-center'>Add Unit</h1>
-                        {/* <hr className='text-[black] text-[10px] mt-2 border border-[black]' /> */}
-                    </div>
-                    <div className=''>
-                        <p className='py-2 font-semibold text-[17px]'>Unit Name</p>
-                        <form className=''>
-                            <div className=''>
-                                <input type='text' placeholder='Unit Name' className='border-2 border-[#5884FF] py-2 rounded-xl px-2 w-full' />
-                            </div>
-                        </form>
-                            <div className='flex justify-center items-center mt-8 mb-6'>
-                                <div className='btn' onClick={() => { setids(0) }}>Add</div>
-                            </div>
-                    </div>
+        <div className={`${ids === 7 ? "" : "hidden"}`}>
+            <div className='bg-white m-auto w-[350px] p-4 flex flex-col gap-4 rounded-xl'>
+                <div className=''>
+                    <h1 className='text-2xl text-center font-semibold'>Add Unit</h1>
                 </div>
+                <div className='flex flex-col space-y-2 justify-center items-center'>
+                    <img src={Img} alt="Logo" className='w-[180px] h-[180px]'/>
+                    <form>
+                    <label for="unit" className='font-medium mb-2'>Unit Name</label>
+                    <input type='password' placeholder='' id="unit" className='p-2 border-2 border-[#5884FF] w-full rounded-md'/>
+                    </form>
+                    <button type='submit' className='btn' onClick={()=>setids(0)}>Add Unit</button>
+                </div>        
             </div>
-            </div>
-        </>
+        </div>
     )
 }
 
-export default AddUnit
+export default EnterPin

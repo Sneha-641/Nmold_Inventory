@@ -12,8 +12,8 @@ const SupplierComponent = () => {
     const [start, setstart] = React.useState(0)
     const [interval, setinterval] = React.useState(15)
     const [showPopup, setShowPopup] = useState(false);
-    const [popupAction, setPopupAction] = useState(null); // New state for action type
-    const [selectedId, setSelectedId] = useState(null); // New state for selected supplier ID
+    const [popupAction, setPopupAction] = useState(null); 
+    const [selectedId, setSelectedId] = useState(null); 
 
     const sortdata = (key) => {
         const sortedData = [...state].sort((a, b) => {

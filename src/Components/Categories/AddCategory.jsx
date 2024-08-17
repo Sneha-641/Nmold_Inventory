@@ -4,8 +4,8 @@ const AddCategory = ({ ids, setids }) => {
     return (
         <>
             <div className={`${ids === 10 ? "" : "hidden"}`}>
-                <div className='ml-[16%]'>
-                <div className='bg-white m-auto w-[379px] mt-[15%] p-4 flex flex-col gap-4 rounded-xl border-2 border-[#5884FF]'>
+                <div className=''>
+                <div className='bg-white m-auto w-[379px]  p-4 flex flex-col gap-4 rounded-xl border-2 border-[#5884FF]'>
                     <div className='' onClick={() => { setids(0) }}>
                         <h1 className='text-[1.5rem] text-center font-bold'>Add Category</h1>
                         {/* <hr className='text-[black] text-[10px] mt-2 border border-[black]' /> */}

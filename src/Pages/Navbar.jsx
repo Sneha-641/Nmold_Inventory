@@ -144,9 +144,9 @@ const Navbar = () => {
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
                 <Link to="/all-unit"><span>All Units</span></Link>
               </div>
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
+              {/* <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
                 <Link to="/add-unit"><span>Add Units</span></Link>
-              </div>
+              </div> */}
             </div>
           )}
         </div>
@@ -176,9 +176,9 @@ const Navbar = () => {
               <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
                 <Link to="/all-category"><span>All Categories</span></Link>
               </div>
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
+              {/* <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
                 <Link to="/add-category"><span>Add Categories</span></Link>
-              </div>
+              </div> */}
             </div>
           )}
         </div>
