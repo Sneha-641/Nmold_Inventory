@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UpdateSupplier = ({ ids, setids }) => {
+const UpdateCustomer = ({ ids, setids }) => {
     return (
         <>
             <div className={`${ids === 19 ? "" : "hidden"}`}>
@@ -9,33 +9,33 @@ const UpdateSupplier = ({ ids, setids }) => {
                         <h1 className='text-[1.5rem] text-center'>Update Customer</h1>
                     </div>
                     <div className=''>
-                            <form className='flex flex-col gap-6'>
+                            <form className='flex flex-col gap-2'>
                             <div className='add-items-class'>
-                                    <label className='px-[10px] text-[15px]'>Customer Name</label>
+                                    <label className='text-[15px]'>Customer Name</label>
                                     <div className='mt-1'>
                                         <input type='text' placeholder='Name' className='login-input4 w-full' />
                                     </div>
                                 </div>
                                 <div className='add-items-class'>
-                                    <label className='px-[10px] text-[15px]'>Customer Mobile</label>
+                                    <label className='text-[15px]'>Customer Mobile</label>
                                     <div className='mt-1'>
                                         <input type='number' placeholder='Contact Number' className='login-input4 w-full' />
                                     </div>
                                 </div>
                                 <div className='add-items-class'>
-                                    <label className='px-[10px] text-[15px]'>Customer Email</label>
+                                    <label className='text-[15px]'>Customer Email</label>
                                     <div className='mt-1'>
                                         <input type='email' placeholder='Email' className='login-input4 w-full' />
                                     </div>
                                 </div>
                                 <div className='add-items-class'>
-                                    <label className='px-[10px] text-[15px]'>Customer Address</label>
+                                    <label className='text-[15px]'>Customer Address</label>
                                     <div className='mt-1'>
                                         <input type='text' placeholder='Address' className='login-input4 w-full' />
                                     </div>
                                 </div>
                             </form>
-                            <div className='flex justify-center items-center mt-8 mb-6'>
+                            <div className='flex justify-center items-center mt-4'>
                                 <div className='btn' onClick={() => { setids(0) }}>Add</div>
                             </div>
                     </div>
@@ -45,4 +45,4 @@ const UpdateSupplier = ({ ids, setids }) => {
     )
 }
 
-export default UpdateSupplier
+export default UpdateCustomer

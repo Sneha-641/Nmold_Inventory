@@ -56,7 +56,7 @@ const AllStockComponent = () => {
                             <FontAwesomeIcon icon={faArrowLeft} />
                             <h2 className="text-xl font-semibold">Back</h2>
                         </div>
-                      <button className="px-4 py-2 bg-[#5884FF] text-white rounded-md shadow-sm shadow-[#5884FF]">Add Stock</button>
+                      {/* <button className="px-4 py-2 bg-[#5884FF] text-white rounded-md shadow-sm shadow-[#5884FF]">Add Stock</button> */}
                       </div>
                       <div className='table-scroll'>
                     <table className='w-full dash-table1 bg-white'>

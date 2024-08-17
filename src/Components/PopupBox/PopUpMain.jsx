@@ -17,6 +17,7 @@ import UpdateCategory from './UpdateCategory'
 import CustomerReport from '../../Pages/CustomerReport'
 import CustomerReportComponent from '../Customers/CustomerReportComponent'
 import UpdateProduct from './UpdateProduct'
+import UpdatePurchase from './UpdatePurchase'
 
 const PopUpMain = ({ ids, setShowPopup }) => {
   return (
@@ -32,6 +33,7 @@ const PopUpMain = ({ ids, setShowPopup }) => {
       <AddCategory ids={ids} setids={()=>setShowPopup(false)}/>
       <UpdateCategory ids={ids} setids={()=>setShowPopup(false)}/>
       <UpdateProduct ids={ids} setids={()=> setShowPopup(false)}/>
+      <UpdatePurchase ids={ids} setids={()=> setShowPopup(false)}/>
       </div>
     </div>
 

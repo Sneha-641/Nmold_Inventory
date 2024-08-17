@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState} from 'react'
 import { purchasealldata } from '../../Data/index'
 import "../../Styles/Home.css"
 import "../../Styles/PurchaseAll.css"
@@ -8,12 +8,13 @@ import AddCategory from '../Categories/AddCategory'
 import PopUpMain from '../PopupBox/PopUpMain'
 import { Link } from 'react-router-dom';
 
-const PurchaseAllComponent = () => {
+const AllPurchaseComponent = () => {
     const [state, setstate] = React.useState(purchasealldata);
     const [dir, setdir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
     const [interval, setinterval] = React.useState(15)
     const [num,setnumber]=React.useState(-1)
+    const [showPopup, setShowPopup] = useState(false);
     const sortdata = (key) => { 
 
         if (dir === 'asc') {
@@ -55,7 +56,7 @@ const PurchaseAllComponent = () => {
     React.useEffect(() => { }, []);
     return (
         <>
-            {/* <PopUpMain id={num}/> */}
+            {showPopup && <PopUpMain ids={22} setShowPopup={setShowPopup} />} 
             <div className='home-table2 rounded-xl'>
                 <div className=''>
                      <div className="flex justify-between items-center mb-4">
@@ -163,8 +164,8 @@ const PurchaseAllComponent = () => {
                                     </div>}
                                 </td>
                                 <td>
-                                    <div className=' flex items-center justify-center py-[2px] cursor-pointer' onClick={()=>{setnumber(10)}}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 15" fill="none">
+                                    <div className=' flex items-center justify-center py-[2px] cursor-pointer' onClick={()=>{setShowPopup(true)}}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 15" fill="none" >
                                             <path d="M0.928711 11.8225V14.2291C0.928711 14.4508 1.11204 14.625 1.34538 14.625H3.87871C3.98704 14.625 4.09538 14.5854 4.17038 14.5062L13.2704 5.86915L10.1454 2.9004L1.05371 11.5375C0.970378 11.6166 0.928711 11.7116 0.928711 11.8225ZM15.687 3.57332C15.7643 3.50008 15.8256 3.41308 15.8674 3.31731C15.9092 3.22154 15.9307 3.11887 15.9307 3.01519C15.9307 2.91151 15.9092 2.80884 15.8674 2.71307C15.8256 2.6173 15.7643 2.53031 15.687 2.45707L13.737 0.604565C13.66 0.531175 13.5684 0.47295 13.4676 0.433223C13.3668 0.393496 13.2587 0.373047 13.1495 0.373047C13.0404 0.373047 12.9323 0.393496 12.8315 0.433223C12.7307 0.47295 12.6391 0.531175 12.562 0.604565L11.037 2.05331L14.162 5.02207L15.687 3.57332Z" fill="#5884FF" />
                                         </svg>
                                     </div>
@@ -220,4 +221,4 @@ const PurchaseAllComponent = () => {
     )
 }
 
-export default PurchaseAllComponent
+export default AllPurchaseComponent
