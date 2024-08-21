@@ -509,63 +509,63 @@ export const customerdata = [
         name1: "1",
         name2: "Sneha Goyal",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "sneha@gmail.com",
         name5: "Gurugram Haryana ,India",
         name7: "Order History",
     },{
         name1: "2",
-        name2: "Sneha Goyal",
+        name2: "Nitika Garg",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "nitika@gmail.com",
         name5: "Gurugram Haryana ,India",
         name7: "Order History",
     },{
         name1: "3",
-        name2: "Sneha Goyal",
+        name2: "Shivam Bansal",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "shivam@gmail.com",
         name5: "Gurugram Haryana ,India",
         name7: "Order History",
     },{
         name1: "4",
-        name2: "Sneha Goyal",
+        name2: "Bhawna Vijay",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "bhawna@gmail.com",
         name5: "Gurugram Haryana ,India",
         name7: "Order History",
     },{
         name1: "5",
-        name2: "Sneha Goyal",
+        name2: "Gaurav Vijay",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "gaurav@gmail.com",
         name5: "Gurugram Haryana ,India",
         name7: "Order History",
     },{
         name1: "6",
-        name2: "Sneha Goyal",
+        name2: "Naman Goyal",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "naman@gmail.com",
         name5: "Gurugram Haryana ,India",
         name7: "Order History",
     },{
         name1: "7",
-        name2: "Sneha Goyal",
+        name2: "Karan Gupta",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "karan@gmail.com",
         name5: "Gurugram Haryana ,India",
         name7: "Order History",
     },{
         name1: "8",
-        name2: "Sneha Goyal",
+        name2: "Rahul kaur",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "rahul@gmail.com",
         name5: "Gurugram Haryana ,India",
         name7: "Order History",
     },{
         name1: "9",
-        name2: "Sneha Goyal",
+        name2: "Vidhi Aggarwal",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "vidhi@gmail.com",
         name5: "Gurugram Haryana ,India",
         name7: "Order History",
     },{
@@ -577,37 +577,37 @@ export const customerdata = [
         name7: "Order History",
     },{
         name1: "11",
-        name2: "Sneha Goyal",
+        name2: "Guneet Singh",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "guneet@gmail.com",
         name5: "Gurugram Haryana ,India",
         name7: "Order History",
     },{
         name1: "12",
-        name2: "Sneha Goyal",
+        name2: "Kiran Advani",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "kiran@gmail.com",
         name5: "Gurugram Haryana ,India",
         name7: "Order History",
     },{
         name1: "13",
-        name2: "Sneha Goyal",
+        name2: "Sahil Garg",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "sahil@gmail.com",
         name5: "Gurugram Haryana ,India",
         name7: "Order History",
     },{
         name1: "14",
-        name2: "Sneha Goyal",
+        name2: "Paras Rawat",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "paras@gmail.com",
         name5: "Gurugram Haryana ,India",
         name7: "Order History",
     },{
         name1: "15",
-        name2: "Sneha Goyal",
+        name2: "Krishna Rana",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "krishna641@gmail.com",
         name5: "Gurugram Haryana ,India",
         name7: "Order History",
     },{
@@ -694,16 +694,16 @@ export const supplierdata = [
     },
     {
         name1: "2",
-        name2: "Sneha Goyal",
+        name2: "Nitika Garg",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "nitika@gmail.com",
         name5: "Gurugram Haryana ,India",
     },
     {
         name1: "3",
-        name2: "Sneha Goyal",
+        name2: "Abhisehk kumar",
         name3: "+91-9213611340",
-        name4: "snehagy641@gmail.com",
+        name4: "abhishek@gmail.com",
         name5: "Gurugram Haryana ,India",
     },
     {
@@ -823,6 +823,24 @@ export const supplierdata = [
 export const stockData = [
     {
         name1: "1",
+        name2: "1234",
+        name3: "02/03/2024",
+        name4: "xyz",
+        name5: "electronics",
+        name6: "10",
+        name7: "Phone",
+        name8: "Full",
+    },{
+        name1: "2",
+        name2: "3125",
+        name3: "07/07/7070",
+        name4: "xyz",
+        name5: "electronics",
+        name6: "10",
+        name7: "Earphones",
+        name8: "Full",
+    },{
+        name1: "3",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -831,7 +849,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "4",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -840,7 +858,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "5",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -849,7 +867,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "6",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -858,7 +876,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "7",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -867,7 +885,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "8",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -876,7 +894,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "9",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -885,7 +903,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "10",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -894,7 +912,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "11",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -903,7 +921,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "12",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -912,7 +930,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "13",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -921,7 +939,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "14",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -930,7 +948,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "15",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -939,7 +957,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "16",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -948,7 +966,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "17",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -957,7 +975,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "18",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -966,7 +984,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "19",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -975,7 +993,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "20",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -984,7 +1002,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
+        name1: "21",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -993,25 +1011,7 @@ export const stockData = [
         name7: "Phone",
         name8: "Full",
     },{
-        name1: "1",
-        name2: "101",
-        name3: "07/07/7070",
-        name4: "xyz",
-        name5: "electronics",
-        name6: "10",
-        name7: "Phone",
-        name8: "Full",
-    },{
-        name1: "1",
-        name2: "101",
-        name3: "07/07/7070",
-        name4: "xyz",
-        name5: "electronics",
-        name6: "10",
-        name7: "Phone",
-        name8: "Full",
-    },{
-        name1: "1",
+        name1: "22",
         name2: "101",
         name3: "07/07/7070",
         name4: "xyz",
@@ -1156,175 +1156,126 @@ export const customerReportData=[
         name1: "1",
         name2: "Sneha Goyal",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "sneha@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "2",
-        name2: "Sneha Goyal",
+        name2: "Karan Gupta",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "karan@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "3",
-        name2: "Sneha Goyal",
+        name2: "Ritik Vij",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "ritik@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "4",
-        name2: "Sneha Goyal",
+        name2: "Aman Kumar",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "aman@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "5",
-        name2: "Sneha Goyal",
+        name2: "Yuvraj Singh",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "yuvraj@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "6",
-        name2: "Sneha Goyal",
+        name2: "Priya Kumari",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "priya@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "7",
-        name2: "Sneha Goyal",
+        name2: "Uday Singh",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "uday@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "8",
-        name2: "Sneha Goyal",
+        name2: "Neha Aggarwal",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "neha@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "9",
-        name2: "Sneha Goyal",
+        name2: "Ruchika Malhan",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "ruchika@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "10",
-        name2: "Sneha Goyal",
+        name2: "Manisha Rani",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "manisha@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "11",
-        name2: "Sneha Goyal",
+        name2: "Joey Doe",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "joeydoe@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "12",
-        name2: "Sneha Goyal",
+        name2: "Yuvraj Singh",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "yuvraj@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "13",
-        name2: "Sneha Goyal",
+        name2: "Priya Kumari",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "priya@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "14",
-        name2: "Sneha Goyal",
+        name2: "Uday Singh",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "uday@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "15",
-        name2: "Sneha Goyal",
+        name2: "Sneha Aggarwal",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "sneha@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "16",
-        name2: "Sneha Goyal",
+        name2: "Ruchika Malhan",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "ruchika@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "17",
-        name2: "Sneha Goyal",
+        name2: "Manisha Rani",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "manisha@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },{
         name1: "18",
-        name2: "Sneha Goyal",
+        name2: "Joey Doe",
         name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
-        name5: "Gurugram Haryana ,India",
-        name6: "+91-9213611340"
-    },{
-        name1: "19",
-        name2: "Sneha Goyal",
-        name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
-        name5: "Gurugram Haryana ,India",
-        name6: "+91-9213611340"
-    },{
-        name1: "20",
-        name2: "Sneha Goyal",
-        name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
-        name5: "Gurugram Haryana ,India",
-        name6: "+91-9213611340"
-    },{
-        name1: "21",
-        name2: "Sneha Goyal",
-        name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
-        name5: "Gurugram Haryana ,India",
-        name6: "+91-9213611340"
-    },{
-        name1: "22",
-        name2: "Sneha Goyal",
-        name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
-        name5: "Gurugram Haryana ,India",
-        name6: "+91-9213611340"
-    },{
-        name1: "23",
-        name2: "Sneha Goyal",
-        name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
-        name5: "Gurugram Haryana ,India",
-        name6: "+91-9213611340"
-    },{
-        name1: "24",
-        name2: "Sneha Goyal",
-        name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
-        name5: "Gurugram Haryana ,India",
-        name6: "+91-9213611340"
-    },{
-        name1: "25",
-        name2: "Sneha Goyal",
-        name3: "XX-XXX",
-        name4: "snehagy641@gmail.com",
+        name4: "joeydoe@gmail.com",
         name5: "Gurugram Haryana ,India",
         name6: "+91-9213611340"
     },

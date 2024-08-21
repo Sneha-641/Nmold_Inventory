@@ -40,7 +40,7 @@ const Navbar = () => {
 
 
   return (
-    <div className="w-[16%] min-h-screen bg-[#5884FF] text-white flex flex-col p-4 space-y-2 absolute left-0  top-0">
+    <div className="w-[16%] min-h-full bg-[#5884FF] text-white flex flex-col p-4 space-y-2 absolute left-0  top-0">
       {/* Logo */}
       <div className="flex items-center space-x-2 mb-6 justify-center">
         <img src={Z} alt="Logo" className="h-10 w-10" />
@@ -287,7 +287,7 @@ const Navbar = () => {
 
         <div className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
           <img src={J} alt="Dashboard" className="h-5 w-5 " />
-          <span>Help/Support</span>
+          <Link to="/help"><span>Help/Support</span></Link>
         </div>
         
         {/* Repeat for other menu items */}

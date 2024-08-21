@@ -1,52 +1,45 @@
-import React from 'react'
+import React  from 'react'
 import { stockData } from '../../Data/index'
 import "../../Styles/Home.css"
 import "../../Styles/PurchaseAll.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
-const AllStockComponent = () => {
-    const [state, setstate] = React.useState(stockData);
-    const [dir, setdir] = React.useState('asc')
+const AllStockComponent = ({searchQuery}) => {
+    const [state, setState] = React.useState(stockData);
+    const [dir, setDir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
     const [interval, setinterval] = React.useState(15)
-    const sortdata = (key) => {
-        if (dir === 'asc') {
-            setdir('desc')
-            const sorteddata = [...state].sort((a, b) => {
-                if (a[key] > b[key]) {
-                    return 1
-                }
-                if (a[key] < b[key]) {
-                    return -1
-                }
-                return 0;
-            })
-            setstate(sorteddata)
-        }
-        else {
-            setdir('asc')
-            const sorteddata = [...state].sort((a, b) => {
+    
+    const sortData = (key) => {
+        const sortedData = [...state].sort((a, b) => {
+            if (a[key] > b[key]) return dir === 'asc' ? 1 : -1;
+            if (a[key] < b[key]) return dir === 'asc' ? -1 : 1;
+            return 0;
+        });
+        setDir(dir === 'asc' ? 'desc' : 'asc');
+        setState(sortedData);
+    };
 
-                if (a[key] < b[key]) {
-                    return 1
-                }
-                if (a[key] > b[key]) {
-                    return -1
-                }
-                return 0;
-            })
-            setstate(sorteddata)
+    React.useEffect(() => {
+        if (!searchQuery) {
+            setState(stockData); // Reset to original data if searchQuery is empty
+            return;
         }
-    }
-    const onSearch = (e) => {
-        const searchdata = [...state].filter((item) => {
-            // return (item.email.includes(e.target.value) || item.name.includes(e.target.value) || item.country.includes(e.target.value))
-            return (item.email.toLowerCase().includes(e.target.value.toLowerCase()) || item.name.toLowerCase().includes(e.target.value.toLowerCase()) || item.country.toLowerCase().includes(e.target.value.toLowerCase()))
-        })
-        setstate(searchdata)
-    }
-    React.useEffect(() => { }, []);
+    
+        const searchData = stockData.filter(item => 
+            item.name1.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name2.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name3.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name4.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name5.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name6.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name7.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+    
+        setState(searchData);
+    }, [searchQuery]);
+
     return (
         <>
             <div className='home-table2 rounded-xl'>
@@ -61,85 +54,24 @@ const AllStockComponent = () => {
                       <div className='table-scroll'>
                     <table className='w-full dash-table1 bg-white'>
                         <tr className='border border-solid cursor-pointer border-black h-[2rem]' style={{ backgroundColor: "white" }}>
-                            <th
-                                onClick={() => sortdata('name1')}
-                            >
-                                S.No.
-                            </th>
-                            <th
-                                onClick={() => sortdata('name1')}
-                            >
-                                Stock No.
-                            </th>
-                            <th
-                                onClick={() => sortdata('name2')}
-                            >
-                                Date
-                            </th>
-                            <th
-                                onClick={() => sortdata('name3')}
-                            >
-                                Supplier
-                            </th>
-                            <th
-                                onClick={() => sortdata('name4')}
-                            >
-                                Category
-                            </th>
-                            <th
-                                onClick={() => sortdata('name5')}
-                            >
-                                Qty
-                            </th>
-                            <th onClick={() => sortdata('name6')}>
-                                Product Name
-                            </th>
-                            <th onClick={() => sortdata('name6')}>
-                                Status
-                            </th>
+                            <th onClick={() => sortData('name1')}>S.No.</th>
+                            <th onClick={() => sortData('name2')}>Stock No.</th>
+                            <th onClick={() => sortData('name3')}>Date</th>
+                            <th onClick={() => sortData('name4')}>Supplier</th>
+                            <th onClick={() => sortData('name5')}>Category</th>
+                            <th onClick={() => sortData('name6')}>Qty</th>
+                            <th onClick={() => sortData('name7')}>Product Name</th>
+                            <th onClick={() => sortData('name8')}>Status</th>
                         </tr>
                         {state.slice(start, start + interval).map((item, index) => (
                             <tr className='h-[2rem]'>
-                                <td>
-                                    <div className=''>
-
-                                        {item.name1}
-
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className=''>
-
-                                        {item.name2}
-
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className=''>
-                                        {item.name3}
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className=''>
-                                        {item.name4}
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className=''>
-                                        {item.name5}
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className=''>
-                                        {item.name6}
-                                    </div>
-                                </td>
-                                <td>
-                                    <div className=''>
-                                        {item.name7}
-                                    </div>
-                                </td>
-
+                                <td><div className=''>{item.name1}</div></td>
+                                <td><div className=''>{item.name2}</div></td>
+                                <td><div className=''>{item.name3}</div></td>
+                                <td><div className=''>{item.name4}</div></td>
+                                <td><div className=''>{item.name5}</div></td>
+                                <td><div className=''>{item.name6}</div></td>
+                                <td><div className=''>{item.name7}</div></td>
                                 <td className=''>
                                     <div className='flex justify-center items-center' style={{ backgroundColor: "" }}>
                                         {item.name8 === "Full" && <div className='text-white bg-green-600 w-[fit-content] px-3 rounded-full flex items-center'

@@ -1,14 +1,14 @@
-import React from 'react'
-import StockAllComponent from '../Components/Stocks/AllStockComponent'
+import React  from 'react'
+import AllStockComponent from '../Components/Stocks/AllStockComponent'
 
-const StockAll = () => {
+const AllStock = ({searchQuery}) => {
   return (
     <div className='ml-[16%]  w-[84%] max-h-[100vh] px-[2rem] mt-[2rem]'>
-            <div className=''>
-                <StockAllComponent />
+            <div>
+                <AllStockComponent searchQuery={searchQuery} />
             </div>
         </div>
   )
 }
 
-export default StockAll
+export default AllStock

@@ -7,8 +7,8 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import PopUpMain from "../PopupBox/PopUpMain";
 
-const AllCustomerComponent = () => {
-  const [state, setstate] = React.useState(customerdata);
+const AllCustomerComponent = ({searchQuery}) => {
+  const [state, setState] = React.useState(customerdata);
   const [dir, setdir] = React.useState("asc");
   const [start, setstart] = React.useState(0);
   const [interval, setinterval] = React.useState(15);
@@ -20,18 +20,26 @@ const AllCustomerComponent = () => {
     const sortedData = [...state].sort((a, b) => {
         return dir === 'asc' ? (a[key] > b[key] ? 1 : -1) : (a[key] < b[key] ? 1 : -1);
     });
-    setstate(sortedData);
+    setState(sortedData);
     setdir(dir === 'asc' ? 'desc' : 'asc');
   };
 
-  const onSearch = (e) => {
-    const searchData = customerdata.filter((item) =>
-        item.email.toLowerCase().includes(e.target.value.toLowerCase()) ||
-        item.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
-        item.country.toLowerCase().includes(e.target.value.toLowerCase())
+  React.useEffect(() => {
+    if (!searchQuery) {
+        setState(customerdata); // Reset to original data if searchQuery is empty
+        return;
+    }
+
+    const searchData = customerdata.filter(item => 
+        item.name1.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.name2.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.name3.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.name4.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.name7.toLowerCase().includes(searchQuery.toLowerCase())
     );
-    setstate(searchData);
-  };
+
+    setState(searchData);
+}, [searchQuery]);
 
   const handlePopup = (action, id) => {
     setPopupAction(action);

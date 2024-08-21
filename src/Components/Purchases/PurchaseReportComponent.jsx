@@ -7,51 +7,41 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import D from '../../Assets/download.png';
 
-const PurchaseReportComponent = () => {
-    const [state, setstate] = React.useState(purchasealldata);
-    const [dir, setdir] = React.useState('asc')
+const PurchaseReportComponent = ({searchQuery}) => {
+    const [state, setState] = React.useState(purchasealldata);
+    const [dir, setDir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
     const [interval, setinterval] = React.useState(15)
     const [num,setnumber]=React.useState(-1)
-    const sortdata = (key) => { 
+    
+    const sortdata = (key) => {
+        const sortedData = [...state].sort((a, b) => {
+            if (a[key] > b[key]) return dir === 'asc' ? 1 : -1;
+            if (a[key] < b[key]) return dir === 'asc' ? -1 : 1;
+            return 0;
+        });
+        setDir(dir === 'asc' ? 'desc' : 'asc');
+        setState(sortedData);
+    };
 
-        if (dir === 'asc') {
-            setdir('desc')
-            const sorteddata = [...state].sort((a, b) => {
-                if (a[key] > b[key]) {
-                    return 1
-                }
-                if (a[key] < b[key]) {
-                    return -1
-                }
-                return 0;
-            })
-            setstate(sorteddata)
+    React.useEffect(() => {
+        if (!searchQuery) {
+            setState(purchasealldata); // Reset to original data if searchQuery is empty
+            return;
         }
-        else {
-            setdir('asc')
-            const sorteddata = [...state].sort((a, b) => {
-
-                if (a[key] < b[key]) {
-                    return 1
-                }
-                if (a[key] > b[key]) {
-                    return -1
-                }
-                return 0;
-            })
-            setstate(sorteddata)
-        }
-    }
-    const onSearch = (e) => {
-        const searchdata = [...state].filter((item) => {
-            // return (item.email.includes(e.target.value) || item.name.includes(e.target.value) || item.country.includes(e.target.value))
-            return (item.email.toLowerCase().includes(e.target.value.toLowerCase()) || item.name.toLowerCase().includes(e.target.value.toLowerCase()) || item.country.toLowerCase().includes(e.target.value.toLowerCase()))
-        })
-        setstate(searchdata)
-    }
-    console.log(start);
-    React.useEffect(() => { }, []);
+    
+        const searchData = purchasealldata.filter(item => 
+            item.name1.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name2.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name3.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name4.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name5.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name6.toLowerCase().includes(searchQuery.toLowerCase()) 
+        );
+    
+        setState(searchData);
+    }, [searchQuery]);
+    
     return (
         <>
             {/* <PopUpMain id={num}/> */}

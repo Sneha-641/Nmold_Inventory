@@ -4,52 +4,42 @@ import "../../Styles/Home.css"
 import "../../Styles/PurchaseAll.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import A from '../../Assets/download.png';
-import { Link } from 'react-router-dom';
 
-const PrintInvoiceComponent = () => {
-    const [state, setstate] = React.useState(customerReportData);
-    const [dir, setdir] = React.useState('asc')
+
+const PrintInvoiceComponent = ({searchQuery}) => {
+    const [state, setState] = React.useState(customerReportData);
+    const [dir, setDir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
     const [interval, setinterval] = React.useState(15)
+    
     const sortdata = (key) => {
-        if (dir === 'asc') {
-            setdir('desc')
-            const sorteddata = [...state].sort((a, b) => {
-                if (a[key] > b[key]) {
-                    return 1
-                }
-                if (a[key] < b[key]) {
-                    return -1
-                }
-                return 0;
-            })
-            setstate(sorteddata)
-        }
-        else {
-            setdir('asc')
-            const sorteddata = [...state].sort((a, b) => {
+        const sortedData = [...state].sort((a, b) => {
+            if (a[key] > b[key]) return dir === 'asc' ? 1 : -1;
+            if (a[key] < b[key]) return dir === 'asc' ? -1 : 1;
+            return 0;
+        });
+        setDir(dir === 'asc' ? 'desc' : 'asc');
+        setState(sortedData);
+    };
 
-                if (a[key] < b[key]) {
-                    return 1
-                }
-                if (a[key] > b[key]) {
-                    return -1
-                }
-                return 0;
-            })
-            setstate(sorteddata)
+    React.useEffect(() => {
+        if (!searchQuery) {
+            setState(customerReportData); // Reset to original data if searchQuery is empty
+            return;
         }
-    }
-    const onSearch = (e) => {
-        const searchdata = [...state].filter((item) => {
-            // return (item.email.includes(e.target.value) || item.name.includes(e.target.value) || item.country.includes(e.target.value))
-            return (item.email.toLowerCase().includes(e.target.value.toLowerCase()) || item.name.toLowerCase().includes(e.target.value.toLowerCase()) || item.country.toLowerCase().includes(e.target.value.toLowerCase()))
-        })
-        setstate(searchdata)
-    }
-    console.log(start);
-    React.useEffect(() => { }, []);
+    
+        const searchData = customerReportData.filter(item => 
+            item.name1.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name2.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name3.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name4.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name5.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name6.toLowerCase().includes(searchQuery.toLowerCase()) 
+        );
+    
+        setState(searchData);
+    }, [searchQuery]);
+    
     return (
         <>
             <div className='home-table2 rounded-xl'>

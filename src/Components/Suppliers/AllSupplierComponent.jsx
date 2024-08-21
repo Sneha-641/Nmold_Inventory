@@ -2,12 +2,12 @@ import { supplierdata } from '../../Data/index'
 import "../../Styles/PurchaseAll.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import { Link } from "react-router-dom"
 import PopUpMain from '../PopupBox/PopUpMain';
 
-const SupplierComponent = () => {
-    const [state, setstate] = React.useState(supplierdata);
+const SupplierComponent = ({ searchQuery }) => {
+    const [state, setState] = React.useState(supplierdata);
     const [dir, setdir] = React.useState('asc')
     const [start, setstart] = React.useState(0)
     const [interval, setinterval] = React.useState(15)
@@ -19,18 +19,26 @@ const SupplierComponent = () => {
         const sortedData = [...state].sort((a, b) => {
             return dir === 'asc' ? (a[key] > b[key] ? 1 : -1) : (a[key] < b[key] ? 1 : -1);
         });
-        setstate(sortedData);
+        setState(sortedData);
         setdir(dir === 'asc' ? 'desc' : 'asc');
     };
 
-    const onSearch = (e) => {
-        const searchData = supplierdata.filter((item) =>
-            item.email.toLowerCase().includes(e.target.value.toLowerCase()) ||
-            item.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
-            item.country.toLowerCase().includes(e.target.value.toLowerCase())
+    React.useEffect(() => {
+        if (!searchQuery) {
+            setState(supplierdata); // Reset to original data if searchQuery is empty
+            return;
+        }
+    
+        const searchData = supplierdata.filter(item => 
+            item.name1.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name2.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name3.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name4.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            item.name5.toLowerCase().includes(searchQuery.toLowerCase()) 
         );
-        setstate(searchData);
-    };
+    
+        setState(searchData);
+    }, [searchQuery]);
 
     const handlePopup = (action, id) => {
         setPopupAction(action);
