@@ -49,7 +49,7 @@ const Table = () => {
                 <div className=' font-semibold text-[20px] my-2 '>
                     Recently Added
                 </div>
-                <div className='w-full h-[206px] overflow-y-auto'>
+                <div className='w-full h-[250px] overflow-y-auto'>
                     <table className='w-full dash-table1'>
                         <thead>
                             <tr className='cursor-pointer table-columns-heights table-header-row rounded-xl font-bold'>
