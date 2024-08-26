@@ -45,6 +45,7 @@ function App() {
         <Navbar/>
         <Routes>
             <Route path="/" element={<Dashboard/>} />
+            <Route path="login" element={<Login/>} />
             {/* <Route path="all-suppliers" element={<AllSuppliers />} /> */}
             <Route path="all-suppliers" element={<AllSuppliers searchQuery={searchQuery}/>} />
             <Route path="add-supplier" element={<AddSupplier />} />

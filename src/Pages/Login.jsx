@@ -25,7 +25,7 @@ const Login = () => {
                         </div>
                         <div className=''>
                             <form className='flex flex-col  gap-2 w-[100%] mt-[0.5rem]'>
-                                <div className='flex flex-col gap-2 w-[100%] ml-[7%]'>
+                                <div className='flex flex-col gap-2 w-[100%] items-center'>
 
                                     <input type="text" placeholder="Username" className='login-input' />
                                     <input type="email" placeholder="Email" className='login-input' />

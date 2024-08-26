@@ -1,15 +1,15 @@
 import React , {useState} from 'react';
-import img from '../../src/Pages/img.svg';
-import img2 from '../../src/Pages/img2.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell , faBellSlash } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const TopNavbar = ({ searchQuery, setSearchQuery }) => {
   const [isNotificationOn, setIsNotificationOn] = useState(false);
+  const [isUserOpen, setUserOpen] = useState(false);
 
-  const handleToggle = () => {
-    setIsNotificationOn(!isNotificationOn);
-  };
+  const handleToggle = () => { setIsNotificationOn(!isNotificationOn); };
+  const toggleUser = () => setUserOpen(!isUserOpen);
+
   return (
     <div className="ml-[16%] w-[84%] min-h-[10vh] flex justify-between items-center py-6 bg-white shadow-md px-[40px]">
       {/* Search Box */}
@@ -26,49 +26,73 @@ const TopNavbar = ({ searchQuery, setSearchQuery }) => {
         />
       </div>
 
-      {/* Right Section with Icons and Profile */}
-      <div className="flex items-center space-x-4">
-        {/* Notification Bell */}
-        <button
-      className="text-gray-600 hover:text-gray-800"
-      onClick={handleToggle}
-    >
+          {/* Right Section*/}
+          <div className='flex space-x-2'>
+  <div className="flex items-center space-x-4">
+    {/* Notification Bell */}
+    <button className="text-gray-600 hover:text-gray-800" onClick={handleToggle}>
       {isNotificationOn ? (
         <FontAwesomeIcon icon={faBell} className='h-6 w-6' />
       ) : (
         <FontAwesomeIcon icon={faBellSlash} className='h-6 w-6' />  
       )}
     </button>
-
-        {/* Profile Picture and Dropdown */}
-        <div className="flex items-center space-x-2">
-          <img
-            className="h-8 w-8 rounded-full object-cover"
-            src="https://randomuser.me/api/portraits/women/75.jpg"
-            alt="User"
-          />
-          <div className="text-sm">
-            <p className="text-gray-800 font-semibold">Welcome User</p>
-            <p className="text-gray-500">Admin</p>
-          </div>
-          <button className="text-gray-600 hover:text-gray-800">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </button>
-        </div>
+  </div>
+  
+  <div className="relative flex flex-col">
+    <div
+      className="flex items-center space-x-2 p-2 rounded-lg cursor-pointer"
+      onClick={toggleUser}
+    >
+      <img
+        className="h-8 w-8 rounded-full object-cover"
+        src="https://randomuser.me/api/portraits/women/75.jpg"
+        alt="User"
+      />
+      <div className="text-sm">
+        <p className="text-gray-800 font-semibold">Welcome User</p>
+        <p className="text-gray-500">Admin</p>
       </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className={`h-4 w-4 ml-auto transition-transform ${
+          isUserOpen ? 'rotate-180' : ''
+        }`}
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fillRule="evenodd"
+          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+          clipRule="evenodd"
+        />
+      </svg>
     </div>
+    {isUserOpen && (
+      <div className="absolute right-0 mt-14 w-full bg-white shadow-lg  flex flex-col space-y-1">
+        <div className="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+          <Link to="/login"><span>Log In</span></Link>
+        </div>
+        {/* <div className="flex items-center p-2 hover:bg-gray-100 rounded-lg cursor-pointer">
+          <Link to="/sign-in"><span>Sign In</span></Link>
+        </div> */}
+      </div>
+    )}
+  </div>
+
+
+
+
+
+
+
+
+
+        </div>
+        </div>
+
   );
+
 };
 
 export default TopNavbar;

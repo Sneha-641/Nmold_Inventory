@@ -1,9 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* rgba(98,131,247,1) */
+
 :root{
-  
+  /* rgba(98,131,247,1) */
 }
 .table-columns-heights{
   height: 3rem;

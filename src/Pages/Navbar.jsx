@@ -1,46 +1,76 @@
-import "../Styles/Navbar.css"
-import Expand from "../Assets/sidebarexp.png"
-import A from "../Assets/Customers.png"
-import B from "../Assets/Outsourcing.png"
-import C from "../Assets/fluent-mdl2_product-list.png"
-import D from "../Assets/Dashboard.png"
-import E from "../Assets/tabler_category-filled.png"
-import F from "../Assets/mage_tag-check.png"
-import G from "../Assets/carbon_purchase.png"
-import H from "../Assets/basil_invoice-outline.png"
-import I from "../Assets/mdi_file-report-outline.png"
-import J from "../Assets/Question.png"
-import Z from "../Assets/Group 3.png"
+import "../Styles/Navbar.css";
+import A from "../Assets/Customers.png";
+import B from "../Assets/Outsourcing.png";
+import C from "../Assets/fluent-mdl2_product-list.png";
+import D from "../Assets/Dashboard.png";
+import E from "../Assets/tabler_category-filled.png";
+import F from "../Assets/mage_tag-check.png";
+import G from "../Assets/carbon_purchase.png";
+import H from "../Assets/basil_invoice-outline.png";
+import I from "../Assets/mdi_file-report-outline.png";
+import J from "../Assets/Question.png"; 
+import Z from "../Assets/Group 3.png";
 
-import React, { useState } from 'react';
-import { Link } from "react-router-dom"
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+
+// Dropdown Component
+const Dropdown = ({ title, icon, links, isActive, isOpen, onToggle }) => {
+  return (
+    <div className="flex flex-col">
+      <div
+        className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer"
+        onClick={onToggle}
+      >
+        <img src={icon} alt={title} className="h-5 w-5" />
+        <span>{title}</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={`h-4 w-4 ml-auto transition-transform ${
+            isOpen ? "rotate-180" : ""
+          }`}
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </div>
+      {isOpen && (
+        <div className="ml-8 flex flex-col space-y-1">
+          {links.map((link) => (
+            <div
+              key={link.path}
+              className={`flex items-center p-2 rounded-lg cursor-pointer ${
+                isActive(link.path) ? "bg-light text-white" : "hover:bg-blue-500"
+              }`}
+            >
+              <Link to={link.path}>
+                <span>{link.label}</span>
+              </Link>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 const Navbar = () => {
+  const location = useLocation();
+  const isActive = (path) => location.pathname === path;
 
+  const [openDropdown, setOpenDropdown] = useState(null);
 
-  // State to manage dropdown visibility
-  const [isSupplierDropdownOpen, setSupplierDropdownOpen] = useState(false);
-  const [isCustomerDropdownOpen, setCustomerDropdownOpen] = useState(false);
-  const [isUnitsDropdownOpen, setUnitsDropdownOpen] = useState(false);
-  const [isCategoriesDropdownOpen, setCategoriesDropdownOpen] = useState(false);
-  const [isProductsDropdownOpen, setProductsDropdownOpen] = useState(false);
-  const [isPurchasesDropdownOpen, setPurchasesDropdownOpen] = useState(false);
-  const [isInvoicesDropdownOpen, setInvoicesDropdownOpen] = useState(false);
-  const [isStocksDropdownOpen, setStocksDropdownOpen] = useState(false);
-
-  // Toggles for dropdowns
-  const toggleSupplierDropdown = () => setSupplierDropdownOpen(!isSupplierDropdownOpen);
-  const toggleCustomerDropdown = () => setCustomerDropdownOpen(!isCustomerDropdownOpen);
-  const toggleUnitsDropdown = () => setUnitsDropdownOpen(!isUnitsDropdownOpen);
-  const toggleCategoriesDropdown = () => setCategoriesDropdownOpen(!isCategoriesDropdownOpen);
-  const toggleProductsDropdown = () => setProductsDropdownOpen(!isProductsDropdownOpen);
-  const togglePurchasesDropdown = () => setPurchasesDropdownOpen(!isPurchasesDropdownOpen);
-  const toggleInvoicesDropdown = () => setInvoicesDropdownOpen(!isInvoicesDropdownOpen);
-  const toggleStocksDropdown = () => setStocksDropdownOpen(!isStocksDropdownOpen);
-
+  const toggleDropdown = (dropdownId) => {
+    setOpenDropdown(openDropdown === dropdownId ? null : dropdownId);
+  };
 
   return (
-    <div className="w-[16%] min-h-full bg-[#5884FF] text-white flex flex-col p-4 space-y-2 absolute left-0  top-0">
+    <div className="w-[16%] min-h-full bg-[#5884FF] text-white flex flex-col p-4 space-y-2 absolute left-0 top-0">
       {/* Logo */}
       <div className="flex items-center space-x-2 mb-6 justify-center">
         <img src={Z} alt="Logo" className="h-10 w-10" />
@@ -50,251 +80,132 @@ const Navbar = () => {
       {/* Menu Items */}
       <div className="flex flex-col space-y-4">
         {/* Dashboard */}
-        <div className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
+        <div
+          className={`flex items-center space-x-2 p-2 rounded-lg cursor-pointer ${
+            isActive("/") ? "bg-light text-white" : "hover:bg-blue-500"
+          }`}
+        >
           <img src={D} alt="Dashboard" className="h-5 w-5 " />
-          <Link to="/"><span>Dashboard</span></Link>
+          <Link to="/">
+            <span>Dashboard</span>
+          </Link>
         </div>
 
         {/* Manage Suppliers Dropdown */}
-        <div className="flex flex-col">
-          <div className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer"
-            onClick={toggleSupplierDropdown}>
-            <img src={B} alt="Manage Suppliers" className="h-5 w-5" />
-            <span>Manage Suppliers</span>
-            <svg xmlns="http://www.w3.org/2000/svg"
-              className={`h-4 w-4 ml-auto transition-transform ${isSupplierDropdownOpen ? 'rotate-180' : ''}`}
-              viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"/>
-            </svg>
-          </div>
-          {isSupplierDropdownOpen && (
-            <div className="ml-8 flex flex-col space-y-1">
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer" >
-                <Link to="/all-suppliers"><span>All Suppliers</span></Link>
-              </div>
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/add-supplier"><span>Add Supplier</span></Link>
-              </div>
-            </div>
-          )}
-        </div>
+        <Dropdown
+          title="Manage Suppliers"
+          icon={B}
+          links={[
+            { path: "/all-suppliers", label: "All Suppliers" },
+            { path: "/add-supplier", label: "Add Supplier" },
+          ]}
+          isActive={isActive} // Pass isActive function
+          isOpen={openDropdown === "suppliers"}
+          onToggle={() => toggleDropdown("suppliers")}
+        />
 
         {/* Manage Customers Dropdown */}
-        <div className="flex flex-col">
-          <div
-            className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer"
-            onClick={toggleCustomerDropdown}
-          >
-            <img src={A} alt="Manage Customers" className="h-5 w-5" />
-            <span>Manage Customers</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className={`h-4 w-4 ml-auto transition-transform ${isCustomerDropdownOpen ? 'rotate-180' : ''}`}
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
-          {isCustomerDropdownOpen && (
-            <div className="ml-8 flex flex-col space-y-1">
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/all-customers"><span>All Customers</span></Link>
-              </div>
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/add-customer"><span>Add Customer</span></Link>
-              </div>
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-              <Link to="/credit-customer"><span>Credit Customers</span></Link>
-              </div>
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/customer-wise-report"><span>Customer Wise Report</span></Link>
-              </div>
-            </div>
-          )}
-        </div>
+        <Dropdown
+          title="Manage Customers"
+          icon={A}
+          links={[
+            { path: "/all-customers", label: "All Customers" },
+            { path: "/add-customer", label: "Add Customer" },
+            { path: "/credit-customer", label: "Credit Customers" },
+            { path: "/customer-wise-report", label: "Customer Wise Report" },
+          ]}
+          isActive={isActive} // Pass isActive function
+          isOpen={openDropdown === "customers"}
+          onToggle={() => toggleDropdown("customers")}
+        />
 
         {/* Manage Units Dropdown */}
-        <div className="flex flex-col">
-          <div
-            className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer"
-            onClick={toggleUnitsDropdown}
-          >
-            <img src={F} alt="Manage Units" className="h-5 w-5" />
-            <span>Manage Units</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className={`h-4 w-4 ml-auto transition-transform ${isUnitsDropdownOpen ? 'rotate-180' : ''}`}
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
-          {isUnitsDropdownOpen && (
-            <div className="ml-8 flex flex-col space-y-1">
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/all-unit"><span>All Units</span></Link>
-              </div>
-              {/* <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/add-unit"><span>Add Units</span></Link>
-              </div> */}
-            </div>
-          )}
-        </div>
+        <Dropdown
+          title="Manage Units"
+          icon={F}
+          links={[{ path: "/all-unit", label: "All Units" }]}
+          isActive={isActive} // Pass isActive function
+          isOpen={openDropdown === "units"}
+          onToggle={() => toggleDropdown("units")}
+        />
 
-        <div className="flex flex-col">
-          <div
-            className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer"
-            onClick={toggleCategoriesDropdown}
-          >
-            <img src={E} alt="Manage Customers" className="h-5 w-5" />
-            <span>Manage Categories</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className={`h-4 w-4 ml-auto transition-transform ${isCategoriesDropdownOpen ? 'rotate-180' : ''}`}
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
-          {isCategoriesDropdownOpen && (
-            <div className="ml-8 flex flex-col space-y-1">
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/all-category"><span>All Categories</span></Link>
-              </div>
-              {/* <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/add-category"><span>Add Categories</span></Link>
-              </div> */}
-            </div>
-          )}
-        </div>
+        {/* Manage Categories Dropdown */}
+        <Dropdown
+          title="Manage Categories"
+          icon={E}
+          links={[{ path: "/all-category", label: "All Categories" }]}
+          isActive={isActive} // Pass isActive function
+          isOpen={openDropdown === "categories"}
+          onToggle={() => toggleDropdown("categories")}
+        />
 
         {/* Manage Products Dropdown */}
-        <div className="flex flex-col">
-          <div className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer"
-            onClick={toggleProductsDropdown}>
-            <img src={C} alt="Manage Suppliers" className="h-5 w-5" />
-            <span>Manage Products</span>
-            <svg xmlns="http://www.w3.org/2000/svg"
-              className={`h-4 w-4 ml-auto transition-transform ${isProductsDropdownOpen ? 'rotate-180' : ''}`}
-              viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"/>
-            </svg>
-          </div>
-          {isProductsDropdownOpen && (
-            <div className="ml-8 flex flex-col space-y-1">
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/all-product"><span>All Products</span></Link>
-              </div>
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/add-product"><span>Add Product</span></Link>
-              </div>
-            </div>
-          )}
-        </div>
-        
-        {/* Manage Purchase Dropdown */}
-        <div className="flex flex-col">
-          <div className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer"
-            onClick={togglePurchasesDropdown}>
-            <img src={G} alt="Manage Suppliers" className="h-5 w-5" />
-            <span>Manage Purchase</span>
-            <svg xmlns="http://www.w3.org/2000/svg"
-              className={`h-4 w-4 ml-auto transition-transform ${isPurchasesDropdownOpen ? 'rotate-180' : ''}`}
-              viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"/>
-            </svg>
-          </div>
-          {isPurchasesDropdownOpen && (
-            <div className="ml-8 flex flex-col space-y-1">
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/all-purchase"><span>All Purchases</span></Link>
-              </div>
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/add-purchase"><span>Add Purchase</span></Link>
-              </div>
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/purchase-report"><span>Purchase Report</span></Link>
-              </div>
-            </div>
-          )}
-        </div>
+        <Dropdown
+          title="Manage Products"
+          icon={C}
+          links={[
+            { path: "/all-product", label: "All Products" },
+            { path: "/add-product", label: "Add Product" },
+          ]}
+          isActive={isActive} // Pass isActive function
+          isOpen={openDropdown === "products"}
+          onToggle={() => toggleDropdown("products")}
+        />
 
-        {/* Manage Invoice Dropdown */}
-        <div className="flex flex-col">
-          <div className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer"
-            onClick={toggleInvoicesDropdown}>
-            <img src={H} alt="Manage Suppliers" className="h-5 w-5" />
-            <span>Manage Invoice</span>
-            <svg xmlns="http://www.w3.org/2000/svg"
-              className={`h-4 w-4 ml-auto transition-transform ${isInvoicesDropdownOpen ? 'rotate-180' : ''}`}
-              viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"/>
-            </svg>
-          </div>
-          {isInvoicesDropdownOpen && (
-            <div className="ml-8 flex flex-col space-y-1">
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/all-invoice"><span>All Invoice</span></Link>
-              </div>
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/add-invoice"><span>Add Invoice</span></Link>
-              </div>
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/print-invoice"><span>Print Invoice</span></Link>
-              </div>
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/daily-invoice-report"><span>Daily Invoice Report</span></Link>
-              </div>
-            </div>
-          )}
-        </div>
+        {/* Manage Purchases Dropdown */}
+        <Dropdown
+          title="Manage Purchase"
+          icon={G}
+          links={[
+            { path: "/all-purchase", label: "All Purchases" },
+            { path: "/add-purchase", label: "Add Purchase" },
+            { path: "/purchase-report", label: "Purchase Report" },
+          ]}
+          isActive={isActive} // Pass isActive function
+          isOpen={openDropdown === "purchases"}
+          onToggle={() => toggleDropdown("purchases")}
+        />
 
-        {/* Manage Invoice Dropdown */}
-        <div className="flex flex-col">
-          <div className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer"
-            onClick={toggleStocksDropdown}>
-            <img src={I} alt="Manage Suppliers" className="h-5 w-5" />
-            <span>Manage Stock</span>
-            <svg xmlns="http://www.w3.org/2000/svg"
-              className={`h-4 w-4 ml-auto transition-transform ${isStocksDropdownOpen ? 'rotate-180' : ''}`}
-              viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"/>
-            </svg>
-          </div>
-          {isStocksDropdownOpen && (
-            <div className="ml-8 flex flex-col space-y-1">
-              <div className="flex items-center p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-                <Link to="/all-stock"><span>All Stocks</span></Link>
-              </div>
-            </div>
-          )}
-        </div>
+        {/* Manage Invoices Dropdown */}
+        <Dropdown
+          title="Manage Invoice"
+          icon={H}
+          links={[
+            { path: "/all-invoice", label: "All Invoice" },
+            { path: "/add-invoice", label: "Add Invoice" },
+            { path: "/print-invoice", label: "Print Invoice" },
+          ]}
+          isActive={isActive} // Pass isActive function
+          isOpen={openDropdown === "invoices"}
+          onToggle={() => toggleDropdown("invoices")}
+        />
 
-        <div className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded-lg cursor-pointer">
-          <img src={J} alt="Dashboard" className="h-5 w-5 " />
-          <Link to="/help"><span>Help/Support</span></Link>
+        {/* Manage Stocks Dropdown */}
+        <Dropdown
+          title="Manage Stock"
+          icon={I}
+          links={[
+            { path: "/all-stock", label: "All Stocks" },
+          ]}
+          isActive={isActive} // Pass isActive function
+          isOpen={openDropdown === "stocks"}
+          onToggle={() => toggleDropdown("stocks")}
+        />
+
+        {/* Help Section */}
+        <div
+          className={`flex items-center space-x-2 p-2 rounded-lg cursor-pointer ${
+            isActive("/help") ? "bg-light text-white" : "hover:bg-blue-500"
+          }`}
+        >
+          <img src={J} alt="Help" className="h-5 w-5" />
+          <Link to="/help">
+            <span>Help/Support</span>
+          </Link>
         </div>
-        
-        {/* Repeat for other menu items */}
-        {/* Additional sections here */}
       </div>
     </div>
   );
 };
 
-export default  Navbar;
+export default Navbar;
