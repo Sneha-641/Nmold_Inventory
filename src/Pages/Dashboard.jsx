@@ -10,10 +10,10 @@ const Dashboard = () => {
     <>
       <div className='ml-[16%] w-[84%] max-h-[100vh] px-[2rem] mt-[2rem] mb-[4rem]'>
         <div className=''>
-          <div className=' flex space-x-2 font-bold text-[20px] items-center'>
+          {/* <div className=' flex space-x-2 font-bold text-[20px] items-center'>
           <FontAwesomeIcon icon={faArrowLeft} />
           <h2 className="text-xl font-semibold">Dashboard</h2>
-          </div>
+          </div> */}
           <Card />
           <Table />
         </div>

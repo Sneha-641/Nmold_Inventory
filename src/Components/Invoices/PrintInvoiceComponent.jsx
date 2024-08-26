@@ -4,6 +4,7 @@ import "../../Styles/Home.css"
 import "../../Styles/PurchaseAll.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 
 const PrintInvoiceComponent = ({searchQuery}) => {
@@ -45,10 +46,10 @@ const PrintInvoiceComponent = ({searchQuery}) => {
             <div className='home-table2 rounded-xl'>
                 <div className=''>
                     <div className="flex justify-between items-center mb-4">
-                        <div className="flex items-center space-x-2">
+                        <Link to="/all-invoice"><div className="flex items-center space-x-2 cursor-pointer">
                             <FontAwesomeIcon icon={faArrowLeft} />
-                            <h2 className="text-lg font-semibold">Back</h2>
-                        </div>
+                            <h2 className="text-lg font-semibold cursor-pointer">All Invoice</h2>
+                        </div></Link>
                         
                     </div>
                     <div className='table-scroll'>

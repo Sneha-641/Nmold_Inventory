@@ -4,6 +4,7 @@ import "../../Styles/Home.css"
 import "../../Styles/PurchaseAll.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const AllStockComponent = ({searchQuery}) => {
     const [state, setState] = React.useState(stockData);
@@ -45,10 +46,10 @@ const AllStockComponent = ({searchQuery}) => {
             <div className='home-table2 rounded-xl'>
                 <div className=''>
                     <div className="flex justify-between items-center mb-4">
-                        <div className="flex items-center space-x-2">
+                        <Link to="/"><div className="flex items-center space-x-2 cursor-pointer">
                             <FontAwesomeIcon icon={faArrowLeft} />
-                            <h2 className="text-xl font-semibold">Back</h2>
-                        </div>
+                            <h2 className="text-xl font-semibold cursor-pointer">Dashboard</h2>
+                        </div></Link>
                       {/* <button className="px-4 py-2 bg-[#5884FF] text-white rounded-md shadow-sm shadow-[#5884FF]">Add Stock</button> */}
                       </div>
                       <div className='table-scroll'>

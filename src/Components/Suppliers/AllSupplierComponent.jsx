@@ -56,10 +56,10 @@ const SupplierComponent = ({ searchQuery }) => {
             <div className='home-table2 rounded-xl'>    
                 <div className=''>
                     <div className="flex justify-between items-center mb-4">
-                        <div className="flex items-center space-x-2">
+                        <Link to="/"><div className="flex items-center space-x-2 cursor-pointer">
                             <FontAwesomeIcon icon={faArrowLeft} />
-                            <h2 className="text-xl font-semibold">Back</h2>
-                        </div>
+                            <h2 className="text-xl font-semibold cursor-pointer">Dashboard</h2>
+                        </div></Link>
                       <Link to="/add-supplier"><button className="px-4 py-2 bg-[#5884FF] text-white rounded-md">Add Supplier</button></Link>
                     </div>
                     <div className='table-scroll'>

@@ -48,10 +48,11 @@ const PurchaseReportComponent = ({searchQuery}) => {
             <div className='home-table2 rounded-xl'>
                 <div className=''>
                      <div className="flex justify-between items-center mb-4">
-                        <div className="flex items-center space-x-2">
+                        <Link to="/all-purchase"><div className="flex items-center space-x-2 cursor-pointer">
                             <FontAwesomeIcon icon={faArrowLeft} />
-                            <h2 className="text-xl font-semibold">Back</h2>
+                            <h2 className="text-xl font-semibold cursor-pointer">All Purchase</h2>
                         </div>
+                        </Link>
                         <div className='flex bg-[#5884FF]'>
                             <button className="flex items-center px-4 py-2 bg-[#5884FF] text-white rounded-md shadow-sm shadow-[#5884FF]"><img src={D} alt="Logo" className="h-6 w-6 mr-2" />Download PDF</button>
                         </div>

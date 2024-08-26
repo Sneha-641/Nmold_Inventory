@@ -57,10 +57,11 @@ const AllProductsComponent = ({searchQuery}) => {
             <div className='home-table2 rounded-xl'>
                 <div className=''>
                     <div className="flex justify-between items-center mb-4">
-                        <div className="flex items-center space-x-2">
+                        <Link to="/"><div className="flex items-center space-x-2 cursor-pointer">
                             <FontAwesomeIcon icon={faArrowLeft} />
-                            <h2 className="text-xl font-semibold">Back</h2>
+                            <h2 className="text-xl font-semibold cursor-pointer">Dashboard</h2>
                         </div>
+                        </Link>
                       <Link to="/add-product"><button className="px-4 py-2 bg-[#5884FF] text-white rounded-md">Add Product</button></Link>
                       </div>
                       <div className='table-scroll'>

@@ -1,16 +1,17 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const DailyInvoiceReport = () => {
   return (
     <>
       <div className='ml-[16%]'>
             <div className="flex justify-between items-center p-4">
-                <div className="flex items-center space-x-2">
+                <Link to="/print-invoice"><div className="flex items-center space-x-2 cursor-pointer">
                     <FontAwesomeIcon icon={faArrowLeft} />
-                    <h2 className="text-xl font-semibold">Back</h2>
-                </div>
+                    <h2 className="text-xl font-semibold cursor-pointer">Print Invoice</h2>
+                </div></Link>
                 
             </div>
             <div className='home-table2-type3 rounded-xl flex justify-center'>
