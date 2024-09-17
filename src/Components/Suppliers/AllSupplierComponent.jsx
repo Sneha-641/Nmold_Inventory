@@ -30,15 +30,17 @@ const SupplierComponent = ({ searchQuery }) => {
         }
     
         const searchData = supplierdata.filter(item => 
-            item.name1.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.name2.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.name3.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.name4.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            item.name5.toLowerCase().includes(searchQuery.toLowerCase()) 
+            // ? Prevents error if name fields is undefined or null
+            (item.name1?.toLowerCase().includes(searchQuery.toLowerCase())) || 
+            (item.name2?.toLowerCase().includes(searchQuery.toLowerCase())) ||
+            (item.name3?.toLowerCase().includes(searchQuery.toLowerCase())) ||
+            (item.name4?.toLowerCase().includes(searchQuery.toLowerCase())) ||
+            (item.name5?.toLowerCase().includes(searchQuery.toLowerCase())) 
         );
     
         setState(searchData);
-    }, [searchQuery]);
+    },[searchQuery, supplierdata]); // Supplierdata in Dependency Array to ensure effect runs when data changes or updated in supplierdata (fetched from API).
+    
 
     const handlePopup = (action, id) => {
         setPopupAction(action);
